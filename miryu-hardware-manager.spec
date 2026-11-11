@@ -5,7 +5,7 @@ Summary:        Hardware information and driver manager for Fedora
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/evernightvista/miryu-hardware-manager
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/evernightvista/miryu-hardware-manager/archive/refs/heads/main.zip
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
