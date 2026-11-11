@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: miryu-hardware-manager 45.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 19:41+0800\n"
+"Report-Msgid-Bugs-To: contact@miryu.gaming\n"
+"POT-Creation-Date: 2026-11-11 14:27+0800\n"
 "PO-Revision-Date: 2026-11-10 20:00+0800\n"
 "Last-Translator: Miryu <contact@miryu.gaming>\n"
 "Language-Team: German\n"
@@ -16,105 +16,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Miryu Hardware Manager\n"
 
-#: src/basicinfopage.cpp:74
+#: src/basicinfopage.cpp:76
 msgid "Processor"
 msgstr "Prozessor"
 
-#: src/basicinfopage.cpp:77
+#: src/basicinfopage.cpp:79
 msgid "Memory"
 msgstr "Arbeitsspeicher"
 
-#: src/basicinfopage.cpp:80
+#: src/basicinfopage.cpp:82
 msgid "Storage"
 msgstr "Speicherplatz"
 
-#: src/basicinfopage.cpp:83
+#: src/basicinfopage.cpp:85
 msgid "Graphics Card"
 msgstr "Grafikkarte"
 
-#: src/basicinfopage.cpp:150
-msgid "Device: %1"
-msgstr "Gerät: %1"
-
-#: src/basicinfopage.cpp:154
-msgid "%1 cores, %2 threads"
-msgstr "%1 Kerne, %2 Threads"
-
-#: src/basicinfopage.cpp:156 src/basicinfopage.cpp:164 src/driverutils.cpp:88
-#: src/driverutils.cpp:119 src/systeminfo.cpp:173 src/systeminfo.cpp:177
-#: src/systeminfo.cpp:180
-msgid "Not available"
-msgstr "Nicht verfügbar"
-
-#: src/basicinfopage.cpp:159 src/basicinfopage.cpp:169
-msgid "%1 GB"
-msgstr "%1 GB"
-
-#: src/basicinfopage.cpp:161 src/basicinfopage.cpp:170
-msgid "%1 GB available"
-msgstr "%1 GB verfügbar"
-
-#: src/basicinfopage.cpp:163
-msgid "%1 GB usable, %2 GB available"
-msgstr "%1 GB nutzbar, %2 GB verfügbar"
-
-#: src/basicinfopage.cpp:96
+#: src/basicinfopage.cpp:95
 msgid "Show all graphics cards"
 msgstr "Alle Grafikkarten anzeigen"
 
 #: src/basicinfopage.cpp:173
+msgid "Device: %1"
+msgstr "Gerät: %1"
+
+#: src/basicinfopage.cpp:177
+msgid "%1 cores, %2 threads"
+msgstr "%1 Kerne, %2 Threads"
+
+#: src/basicinfopage.cpp:179 src/basicinfopage.cpp:189
+#: src/basicinfopage.cpp:192 src/systeminfo.cpp:288 src/systeminfo.cpp:308
+#: src/systeminfo.cpp:311 src/systeminfo.cpp:314
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+#: src/basicinfopage.cpp:184 src/basicinfopage.cpp:200
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: src/basicinfopage.cpp:186
+msgid "%1 GB usable, %2 GB available"
+msgstr "%1 GB nutzbar, %2 GB verfügbar"
+
+#: src/basicinfopage.cpp:201
+msgid "%1 GB available"
+msgstr "%1 GB verfügbar"
+
+#: src/basicinfopage.cpp:204
 msgid "Driver version: %1"
 msgstr "Treiberversion: %1"
 
-#: src/driverpage.cpp:60
+#: src/driverpage.cpp:72
+msgid "Yes"
+msgstr "Ja"
+
+#: src/driverpage.cpp:73
+msgid "No"
+msgstr "Nein"
+
+#: src/driverpage.cpp:91
 msgid "Installed"
 msgstr "Installiert"
 
-#: src/driverpage.cpp:60 src/systeminfo.cpp:171
+#: src/driverpage.cpp:91 src/systeminfo.cpp:305
 msgid "Not installed"
 msgstr "Nicht installiert"
 
-#: src/driverpage.cpp:99
+#: src/driverpage.cpp:119
 msgid "Logitech TrueForce Driver"
 msgstr "Logitech-TrueForce-Treiber"
 
-#: src/driverpage.cpp:107
+#: src/driverpage.cpp:128
 msgid "Razer Driver"
 msgstr "Razer-Treiber"
 
-#: src/driverpage.cpp:121
+#: src/driverpage.cpp:142
 msgid "Register Secure Boot MOK"
 msgstr "Secure-Boot-MOK registrieren"
 
-#: src/driverpage.cpp:132 src/driverpage.cpp:135
+#: src/driverpage.cpp:152 src/driverpage.cpp:155
 msgid "Logitech TrueForce driver"
 msgstr "Logitech-TrueForce-Treiber"
 
-#: src/driverpage.cpp:138 src/driverpage.cpp:141
+#: src/driverpage.cpp:158 src/driverpage.cpp:161
 msgid "Razer driver"
 msgstr "Razer-Treiber"
 
-#: src/driverpage.cpp:162
+#: src/driverpage.cpp:182
 msgid "NVIDIA Drivers"
 msgstr "NVIDIA-Treiber"
 
-#: src/driverpage.cpp:165
+#: src/driverpage.cpp:185
 msgid "Current driver: detecting..."
 msgstr "Aktueller Treiber: wird ermittelt..."
 
-#: src/driverpage.cpp:183
+#: src/driverpage.cpp:203
 msgid "Install / Switch"
 msgstr "Installieren / Wechseln"
 
-#: src/driverpage.cpp:186 src/driverpage.cpp:403
+#: src/driverpage.cpp:206 src/driverpage.cpp:398
 msgid "Revert to Nouveau"
 msgstr "Zu Nouveau zurückkehren"
 
-#: src/driverpage.cpp:234
+#: src/driverpage.cpp:254
 msgid "Install"
 msgstr "Installieren"
 
-#: src/driverpage.cpp:235
+#: src/driverpage.cpp:255
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
@@ -138,39 +146,170 @@ msgstr "Secure Boot: deaktiviert"
 msgid "Display server: %1"
 msgstr "Anzeigeserver: %1"
 
-#: src/driverpage.cpp:318
+#: src/driverpage.cpp:312
 msgid "Already Installed"
 msgstr "Bereits installiert"
 
-#: src/driverpage.cpp:319
+#: src/driverpage.cpp:313
 msgid ""
 "The driver package \"%1\" is already installed.\n"
 "No further action is required."
-msgstr "Das Treiberpaket „%1“ ist bereits installiert.\nEs ist keine weitere Aktion erforderlich."
+msgstr ""
+"Das Treiberpaket „%1“ ist bereits installiert.\n"
+"Es ist keine weitere Aktion erforderlich."
 
-#: src/driverpage.cpp:329
+#: src/driverpage.cpp:322
 msgid "Different Driver Installed"
 msgstr "Anderer Treiber installiert"
 
-#: src/driverpage.cpp:330
+#: src/driverpage.cpp:323
 msgid ""
 "The package \"%1\" is currently installed.\n"
 "Installing \"%2\" will replace it.\n"
 "\n"
 "Continue?"
-msgstr "Das Paket „%1“ ist derzeit installiert.\nDie Installation von „%2“ ersetzt es.\n\nFortfahren?"
+msgstr ""
+"Das Paket „%1“ ist derzeit installiert.\n"
+"Die Installation von „%2“ ersetzt es.\n"
+"\n"
+"Fortfahren?"
 
-#: src/driverpage.cpp:346
+#: src/driverpage.cpp:337 src/driverpage.cpp:509
 msgid "Secure Boot Detected"
 msgstr "Secure Boot erkannt"
 
-#: src/driverpage.cpp:347
+#: src/driverpage.cpp:338
 msgid ""
 "Secure Boot is enabled. The NVIDIA kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
-msgstr "Secure Boot ist aktiviert. Das NVIDIA-Kernelmodul muss signiert sein.\nJetzt einen Machine Owner Key (MOK) konfigurieren?"
+msgstr ""
+"Secure Boot ist aktiviert. Das NVIDIA-Kernelmodul muss signiert sein.\n"
+"Jetzt einen Machine Owner Key (MOK) konfigurieren?"
 
-#: src/driverpage.cpp:506
+#: src/driverpage.cpp:360
+msgid "NVIDIA Driver Installation Log"
+msgstr "Installationsprotokoll für NVIDIA-Treiber"
+
+#: src/driverpage.cpp:368
+msgid "Installation Failed"
+msgstr "Installation fehlgeschlagen"
+
+#: src/driverpage.cpp:369
+msgid ""
+"The installation did not complete. Please check the log:\n"
+"%1"
+msgstr ""
+"Die Installation wurde nicht abgeschlossen. Bitte prüfen Sie das Protokoll:\n"
+"%1"
+
+#: src/driverpage.cpp:378
+msgid ""
+"The NVIDIA driver was installed successfully. Open System Monitor and wait "
+"for the cc1 processes and the subsequent dnf5 process to finish, then reboot "
+"to start using it.\n"
+"\n"
+"Log saved to: %1"
+msgstr ""
+"Der NVIDIA-Treiber wurde erfolgreich installiert. Öffnen Sie die "
+"Systemüberwachung und warten Sie, bis die cc1-Prozesse und der anschließende "
+"dnf5-Prozess abgeschlossen sind, und starten Sie dann neu, um den Treiber zu "
+"verwenden.\n"
+"\n"
+"Protokoll gespeichert unter: %1"
+
+#: src/driverpage.cpp:386
+msgid ""
+"nvidia-smi is not installed. The CUDA package for this driver branch is not "
+"available, so the nvidia-smi monitoring tool is missing."
+msgstr ""
+"nvidia-smi ist nicht installiert. Das CUDA-Paket für diesen Treiberzweig ist "
+"nicht verfügbar, daher fehlt das Überwachungswerkzeug nvidia-smi."
+
+#: src/driverpage.cpp:390 src/driverpage.cpp:556
+msgid "Installation Complete"
+msgstr "Installation abgeschlossen"
+
+#: src/driverpage.cpp:399
+msgid ""
+"This will remove the NVIDIA driver packages and switch back to the Nouveau "
+"driver.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Dadurch werden die NVIDIA-Treiberpakete entfernt und auf den Nouveau-Treiber "
+"zurückgewechselt.\n"
+"\n"
+"Fortfahren?"
+
+#: src/driverpage.cpp:407
+msgid "Nouveau Restore Log"
+msgstr "Nouveau-Wiederherstellungsprotokoll"
+
+#: src/driverpage.cpp:414 src/driverpage.cpp:563
+msgid "Uninstall Complete"
+msgstr "Deinstallation abgeschlossen"
+
+#: src/driverpage.cpp:415
+msgid ""
+"The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
+msgstr ""
+"Die NVIDIA-Treiberpakete wurden entfernt. Starten Sie neu, um den Nouveau-"
+"Treiber zu verwenden."
+
+#: src/driverpage.cpp:418 src/driverpage.cpp:467 src/driverpage.cpp:494
+#: src/driverpage.cpp:545
+msgid "Operation Failed"
+msgstr "Vorgang fehlgeschlagen"
+
+#: src/driverpage.cpp:419 src/driverpage.cpp:468 src/driverpage.cpp:495
+#: src/driverpage.cpp:546
+msgid ""
+"The operation did not complete. Please check the log:\n"
+"%1"
+msgstr ""
+"Der Vorgang wurde nicht abgeschlossen. Bitte prüfen Sie das Protokoll:\n"
+"%1"
+
+#: src/driverpage.cpp:430 src/driverpage.cpp:437
+msgid "Secure Boot MOK"
+msgstr "Secure-Boot-MOK"
+
+#: src/driverpage.cpp:431
+msgid ""
+"Secure Boot on your computer firmware is disabled or the firmware does not "
+"support Secure Boot."
+msgstr ""
+"Secure Boot ist auf der Firmware Ihres Computers deaktiviert oder die "
+"Firmware unterstützt Secure Boot nicht."
+
+#: src/driverpage.cpp:438
+msgid "You have already registered the Secure Boot MOK."
+msgstr "Sie haben bereits einen Secure Boot MOK registriert."
+
+#: src/driverpage.cpp:449
+msgid "Install akmods-evernight"
+msgstr "akmods-evernight installieren"
+
+#: src/driverpage.cpp:450
+msgid ""
+"akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
+"It is not installed yet. Install it first and then continue with MOK "
+"registration?"
+msgstr ""
+"akmods-evernight wird benötigt, um den Secure-Boot-MOK zu erzeugen und zu "
+"registrieren.\n"
+"Es ist noch nicht installiert. Zuerst installieren und danach mit der MOK-"
+"Registrierung fortfahren?"
+
+#: src/driverpage.cpp:458 src/driverpage.cpp:530
+msgid "%1 - Installation Log"
+msgstr "%1 – Installationsprotokoll"
+
+#: src/driverpage.cpp:485
+msgid "MOK Configuration Log"
+msgstr "MOK-Konfigurationsprotokoll"
+
+#: src/driverpage.cpp:510
 msgid ""
 "Secure Boot is enabled. The %1 kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
@@ -178,218 +317,352 @@ msgstr ""
 "Secure Boot ist aktiviert. Das Kernelmodul von %1 muss signiert werden.\n"
 "Jetzt einen Machine Owner Key (MOK) einrichten?"
 
-#: src/driverpage.cpp:360
-msgid "Confirm Installation"
-msgstr "Installation bestätigen"
-
-#: src/driverpage.cpp:361
-msgid ""
-"The following packages will be installed:\n"
-"\n"
-"%1\n"
-"\n"
-"Do you want to continue?"
-msgstr "Die folgenden Pakete werden installiert:\n\n%1\n\nMöchten Sie fortfahren?"
-
-#: src/driverpage.cpp:379
-msgid "NVIDIA Driver Installation Log"
-msgstr "Installationsprotokoll für NVIDIA-Treiber"
-
-#: src/driverpage.cpp:383
-msgid "Installation Failed"
-msgstr "Installation fehlgeschlagen"
-
-#: src/driverpage.cpp:384
-msgid ""
-"The installation did not complete. Please check the log:\n"
-"%1"
-msgstr "Die Installation wurde nicht abgeschlossen. Bitte prüfen Sie das Protokoll:\n%1"
-
-#: src/driverpage.cpp:392
-msgid "Installation Complete"
-msgstr "Installation abgeschlossen"
-
-#: src/driverpage.cpp
-msgid "The NVIDIA driver was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it.\n\nLog saved to: %1"
-msgstr "Der NVIDIA-Treiber wurde erfolgreich installiert. Öffnen Sie die Systemüberwachung und warten Sie, bis die cc1-Prozesse und der anschließende dnf5-Prozess abgeschlossen sind, und starten Sie dann neu, um den Treiber zu verwenden.\n\nProtokoll gespeichert unter: %1"
-
-#: src/driverpage.cpp:404
-msgid ""
-"This will remove the NVIDIA driver packages and switch back to the Nouveau "
-"driver.\n"
-"\n"
-"Continue?"
-msgstr "Dadurch werden die NVIDIA-Treiberpakete entfernt und auf den Nouveau-Treiber zurückgewechselt.\n\nFortfahren?"
-
-#: src/driverpage.cpp:412
-msgid "Nouveau Restore Log"
-msgstr "Nouveau-Wiederherstellungsprotokoll"
-
-#: src/driverpage.cpp:418
-msgid "Revert Complete"
-msgstr "Rückkehr abgeschlossen"
-
-#: src/driverpage.cpp:419
-msgid ""
-"The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
-msgstr "Die NVIDIA-Treiberpakete wurden entfernt. Starten Sie neu, um den Nouveau-Treiber zu verwenden."
-
-#: src/driverpage.cpp:422 src/driverpage.cpp:459 src/driverpage.cpp:489
-msgid "Operation Failed"
-msgstr "Vorgang fehlgeschlagen"
-
-#: src/driverpage.cpp:423 src/driverpage.cpp:460 src/driverpage.cpp:490
-msgid ""
-"The operation did not complete. Please check the log:\n"
-"%1"
-msgstr "Der Vorgang wurde nicht abgeschlossen. Bitte prüfen Sie das Protokoll:\n%1"
-
-#: src/driverpage.cpp:433 src/driverpage.cpp:440
-msgid "Secure Boot MOK"
-msgstr "Secure-Boot-MOK"
-
-#: src/driverpage.cpp:435
-msgid ""
-"Secure Boot on your computer firmware is disabled or the firmware does not "
-"support Secure Boot."
-msgstr "Secure Boot ist auf der Firmware Ihres Computers deaktiviert oder die Firmware unterstützt Secure Boot nicht."
-
-#: src/driverpage.cpp:454
-msgid "Install akmods-evernight"
-msgstr "akmods-evernight installieren"
-
-#: src/driverpage.cpp:455
-msgid ""
-"akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
-"It is not installed yet. Install it first and then continue with MOK "
-"registration?"
-msgstr "akmods-evernight wird benötigt, um den Secure-Boot-MOK zu erzeugen und zu registrieren.\nEs ist noch nicht installiert. Zuerst installieren und danach mit der MOK-Registrierung fortfahren?"
-
-#: src/driverpage.cpp:485
-msgid "MOK Configuration Log"
-msgstr "MOK-Konfigurationsprotokoll"
-
-#: src/driverpage.cpp:471
+#: src/driverpage.cpp:521
 msgid "Uninstall Driver"
 msgstr "Treiber deinstallieren"
 
-#: src/driverpage.cpp:472
+#: src/driverpage.cpp:522
 msgid "Remove the %1 from this system?"
 msgstr "Den %1 von diesem System entfernen?"
 
-#: src/driverpage.cpp:480
-msgid "%1 - Installation Log"
-msgstr "%1 – Installationsprotokoll"
-
-#: src/driverpage.cpp:481
+#: src/driverpage.cpp:531
 msgid "%1 - Removal Log"
 msgstr "%1 – Entfernungsprotokoll"
 
-#: src/driverpage.cpp:501
+#: src/driverpage.cpp:557
+msgid ""
+"%1 was installed successfully. Open System Monitor and wait for the cc1 "
+"processes and the subsequent dnf5 process to finish, then reboot to start "
+"using it."
+msgstr ""
+"%1 wurde erfolgreich installiert. Öffnen Sie die Systemüberwachung und "
+"warten Sie, bis die cc1-Prozesse und der anschließende dnf5-Prozess "
+"abgeschlossen sind, und starten Sie dann neu, um den Treiber zu verwenden."
+
+#: src/driverpage.cpp:564
+msgid "%1 was removed successfully."
+msgstr "%1 wurde erfolgreich entfernt."
+
+#: src/driverpage.cpp:574
 msgid "Set MOK Password"
 msgstr "MOK-Passwort festlegen"
 
-#: src/driverpage.cpp:502
+#: src/driverpage.cpp:575
 msgid ""
 "Enter a password for the Machine Owner Key (MOK).\n"
 "You will need to enter it after reboot:"
-msgstr "Geben Sie ein Passwort für den Machine Owner Key (MOK) ein.\nSie benötigen es nach dem Neustart:"
+msgstr ""
+"Geben Sie ein Passwort für den Machine Owner Key (MOK) ein.\n"
+"Sie benötigen es nach dem Neustart:"
 
-#: src/driverpage.cpp:510
+#: src/driverpage.cpp:583
 msgid "Confirm MOK Password"
 msgstr "MOK-Passwort bestätigen"
 
-#: src/driverpage.cpp:511
+#: src/driverpage.cpp:584
 msgid "Re-enter the password to confirm:"
 msgstr "Passwort zur Bestätigung erneut eingeben:"
 
-#: src/driverpage.cpp:514
+#: src/driverpage.cpp:587
 msgid "Password Mismatch"
 msgstr "Passwörter stimmen nicht überein"
 
-#: src/driverpage.cpp:515
+#: src/driverpage.cpp:588
 msgid "The passwords do not match. MOK configuration was skipped."
-msgstr "Die Passwörter stimmen nicht überein. Die MOK-Konfiguration wurde übersprungen."
+msgstr ""
+"Die Passwörter stimmen nicht überein. Die MOK-Konfiguration wurde "
+"übersprungen."
 
-#: src/driverpage.cpp:525
+#: src/driverpage.cpp:598
 msgid "MOK Configuration Complete"
 msgstr "MOK-Konfiguration abgeschlossen"
 
-#: src/driverpage.cpp:526
+#: src/driverpage.cpp:599
 msgid ""
 "After rebooting, the MOK management screen will appear.\n"
 "Choose \"Enroll MOK\" and enter this password:\n"
 "\n"
 "%1"
-msgstr "Nach dem Neustart erscheint der MOK-Verwaltungsbildschirm.\nWählen Sie „Enroll MOK“ und geben Sie dieses Passwort ein:\n\n%1"
+msgstr ""
+"Nach dem Neustart erscheint der MOK-Verwaltungsbildschirm.\n"
+"Wählen Sie „Enroll MOK“ und geben Sie dieses Passwort ein:\n"
+"\n"
+"%1"
 
-#: src/driverutils.cpp:109
+#: src/driverpage.cpp:606
+msgid "Operation Cancelled"
+msgstr "Vorgang abgebrochen"
+
+#: src/driverpage.cpp:607
+msgid ""
+"The operation was cancelled before it completed. Changes already made may be "
+"partially applied. Please check the log:\n"
+"%1"
+msgstr ""
+"Der Vorgang wurde vor dem Abschluss abgebrochen. Bereits vorgenommene "
+"Änderungen sind möglicherweise nur teilweise angewendet. Bitte prüfen Sie "
+"das Protokoll:\n"
+"%1"
+
+#: src/driverscripts.cpp:46
+msgid "Started at"
+msgstr "Gestartet um"
+
+#: src/driverscripts.cpp:53
+msgid "Checking akmods support package..."
+msgstr "Akmods-Unterstützungspaket wird geprüft …"
+
+#: src/driverscripts.cpp:55
+msgid "akmods-evernight is not installed, installing it now..."
+msgstr "akmods-evernight ist nicht installiert, wird jetzt installiert …"
+
+#: src/driverscripts.cpp:75
+msgid "MOK certificate already exists, skipping registration."
+msgstr "MOK-Zertifikat existiert bereits, Registrierung wird übersprungen."
+
+#: src/driverscripts.cpp:80
+msgid "Certificate and key files already exist, skipping generation."
+msgstr ""
+"Zertifikat- und Schlüsseldateien existieren bereits, Erzeugung wird "
+"übersprungen."
+
+#: src/driverscripts.cpp:89
+msgid "ERROR: kmodgenca was not found after installing akmods-evernight."
+msgstr ""
+"FEHLER: kmodgenca wurde nach der Installation von akmods-evernight nicht "
+"gefunden."
+
+#: src/driverscripts.cpp:103
+msgid "Generating new signing key and certificate using kmodgenca..."
+msgstr ""
+"Neuer Signaturschlüssel und neues Zertifikat werden mit kmodgenca erzeugt …"
+
+#: src/driverscripts.cpp:110
+msgid "ERROR: kmodgenca failed."
+msgstr "FEHLER: kmodgenca ist fehlgeschlagen."
+
+#: src/driverscripts.cpp:114
+msgid "ERROR: kmodgenca did not create certificate files."
+msgstr "FEHLER: kmodgenca hat keine Zertifikatdateien erzeugt."
+
+#: src/driverscripts.cpp:117
+msgid "Certificate and key files generated successfully."
+msgstr "Zertifikat- und Schlüsseldateien wurden erfolgreich erzeugt."
+
+#: src/driverscripts.cpp:120
+msgid "Checking if certificate is already enrolled..."
+msgstr "Es wird geprüft, ob das Zertifikat bereits registriert ist …"
+
+#: src/driverscripts.cpp:126
+msgid "Certificate is already enrolled in MOK, skipping import."
+msgstr ""
+"Das Zertifikat ist bereits in MOK registriert, Import wird übersprungen."
+
+#: src/driverscripts.cpp:132
+msgid "MOK import request for this certificate was already submitted."
+msgstr "Die MOK-Importanfrage für dieses Zertifikat wurde bereits gesendet."
+
+#: src/driverscripts.cpp:134
+msgid "Certificate is not enrolled in MOK, importing it now..."
+msgstr ""
+"Das Zertifikat ist nicht in MOK registriert, Import wird jetzt durchgeführt …"
+
+#: src/driverscripts.cpp:142
+msgid "MOK import request submitted successfully."
+msgstr "MOK-Importanfrage wurde erfolgreich gesendet."
+
+#: src/driverscripts.cpp:146
+msgid "MOK import request already exists."
+msgstr "MOK-Importanfrage existiert bereits."
+
+#: src/driverscripts.cpp:149
+msgid "MOK import failed with exit code %1. Error output:"
+msgstr "MOK-Import mit Rückgabecode %1 fehlgeschlagen. Fehlerausgabe:"
+
+#: src/driverscripts.cpp:181
+msgid "No previous NVIDIA driver packages found."
+msgstr "Keine vorhandenen NVIDIA-Treiberpakete gefunden."
+
+#: src/driverscripts.cpp:204
+msgid "Removing remaining related packages..."
+msgstr "Verbleibende zugehörige Pakete werden entfernt..."
+
+#: src/driverscripts.cpp:213
+msgid "No related packages left."
+msgstr "Es sind keine zugehörigen Pakete mehr vorhanden."
+
+#: src/driverscripts.cpp:225 src/driverscripts.cpp:368
+#: src/driverscripts.cpp:382
+msgid "Finished at"
+msgstr "Beendet um"
+
+#: src/driverscripts.cpp:235 src/driverscripts.cpp:322
+#: src/driverscripts.cpp:343
+msgid "Package manager: %1"
+msgstr "Paketmanager: %1"
+
+#: src/driverscripts.cpp:239 src/driverscripts.cpp:323
+#: src/driverscripts.cpp:346
+msgid "Starting MOK configuration..."
+msgstr "MOK-Konfiguration wird gestartet …"
+
+#: src/driverscripts.cpp:251
+msgid "Removing all previous NVIDIA driver packages..."
+msgstr "Alle alten NVIDIA-Treiberpakete werden entfernt …"
+
+#: src/driverscripts.cpp:266
+msgid "Installing NVIDIA driver packages..."
+msgstr "NVIDIA-Treiberpakete werden installiert …"
+
+#: src/driverscripts.cpp:278
+msgid ""
+"The CUDA package \"%1\" could not be installed; retrying with the driver "
+"alone..."
+msgstr "Das CUDA-Paket „%1“ konnte nicht installiert werden; es wird erneut nur mit dem Treiber versucht…"
+
+#: src/driverscripts.cpp:288
+msgid "Verifying installation..."
+msgstr "Installation wird überprüft …"
+
+#: src/driverscripts.cpp:292
+msgid "ERROR: package \"%1\" was not installed."
+msgstr "FEHLER: Paket \"%1\" wurde nicht installiert."
+
+#: src/driverscripts.cpp:299
+msgid "Checking nvidia-smi..."
+msgstr "Prüfe nvidia-smi …"
+
+#: src/driverscripts.cpp:301
+msgid "nvidia-smi is available."
+msgstr "nvidia-smi ist verfügbar."
+
+#: src/driverscripts.cpp:304
+msgid ""
+"WARNING: nvidia-smi is missing. It is provided by the CUDA package \"%1\", "
+"which is not available for this driver branch on your Fedora release."
+msgstr ""
+"WARNUNG: nvidia-smi fehlt. Es wird vom CUDA-Paket „%1“ bereitgestellt, das "
+"für diesen Treiberzweig in Ihrer Fedora-Version nicht verfügbar ist."
+
+#: src/driverscripts.cpp:310
+msgid "NVIDIA driver installation completed successfully."
+msgstr "NVIDIA-Treiberinstallation wurde erfolgreich abgeschlossen."
+
+#: src/driverscripts.cpp:329
+msgid "MOK configuration completed successfully."
+msgstr "MOK-Konfiguration wurde erfolgreich abgeschlossen."
+
+#: src/driverscripts.cpp:352
+msgid "Installing %1..."
+msgstr "%1 wird installiert …"
+
+#: src/driverscripts.cpp:356
+msgid "Package installation completed successfully."
+msgstr "Paketinstallation wurde erfolgreich abgeschlossen."
+
+#: src/driverscripts.cpp:358
+msgid "Removing %1..."
+msgstr "%1 wird entfernt …"
+
+#: src/driverscripts.cpp:366
+msgid "Package removal completed successfully."
+msgstr "Paketentfernung wurde erfolgreich abgeschlossen."
+
+#: src/driverscripts.cpp:377
+msgid "Removing NVIDIA driver packages..."
+msgstr "NVIDIA-Treiberpakete werden entfernt …"
+
+#: src/driverscripts.cpp:380
+msgid "NVIDIA driver packages removed."
+msgstr "NVIDIA-Treiberpakete wurden entfernt."
+
+#: src/driverscripts.cpp:381
+msgid "The open-source Nouveau driver will be used after reboot."
+msgstr "Nach dem Neustart wird der Open-Source-Treiber Nouveau verwendet."
+
+#: src/driverutils.cpp:91
 msgid "Hyper-V Graphics"
 msgstr "Hyper-V-Grafik"
 
-#: src/driverutils.cpp:160
+#: src/driverutils.cpp:155
 msgid "NVIDIA Latest (open kernel module)"
 msgstr "NVIDIA aktuell (offenes Kernelmodul)"
 
-#: src/driverutils.cpp:248 src/systeminfo.cpp:33 src/systeminfo.cpp:56
-#: src/systeminfo.cpp:95
+#: src/driverutils.cpp:231 src/systeminfo.cpp:144 src/systeminfo.cpp:167
+#: src/systeminfo.cpp:206
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: src/installlogdialog.cpp:49
+#: src/installlogdialog.cpp:106
 msgid "Preparing..."
 msgstr "Wird vorbereitet..."
 
-#: src/installlogdialog.cpp:70
+#: src/installlogdialog.cpp:127
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/installlogdialog.cpp:130
 msgid "Close"
 msgstr "Schließen"
 
-#: src/installlogdialog.cpp:85
+#: src/installlogdialog.cpp:147
 msgid "Error: Cannot create temporary directory."
 msgstr "Fehler: Temporäres Verzeichnis kann nicht erstellt werden."
 
-#: src/installlogdialog.cpp:86 src/installlogdialog.cpp:95
-#: src/installlogdialog.cpp:124
+#: src/installlogdialog.cpp:148 src/installlogdialog.cpp:158
+#: src/installlogdialog.cpp:196
 msgid "Failed to start the installation."
 msgstr "Die Installation konnte nicht gestartet werden."
 
-#: src/installlogdialog.cpp:94
+#: src/installlogdialog.cpp:157
 msgid "Error: Cannot write temporary script."
 msgstr "Fehler: Temporäres Skript kann nicht geschrieben werden."
 
-#: src/installlogdialog.cpp:103
+#: src/installlogdialog.cpp:167
 msgid "Log file: %1"
 msgstr "Protokolldatei: %1"
 
-#: src/installlogdialog.cpp:123
+#: src/installlogdialog.cpp:195
 msgid "Failed to start pkexec."
 msgstr "pkexec konnte nicht gestartet werden."
 
-#: src/installlogdialog.cpp:133
+#: src/installlogdialog.cpp:210
 msgid "Running..."
 msgstr "Wird ausgeführt..."
 
-#: src/installlogdialog.cpp:170
+#: src/installlogdialog.cpp:240
+msgid "Cancelling..."
+msgstr "Wird abgebrochen..."
+
+#: src/installlogdialog.cpp:242
+msgid "Cancellation requested by the user."
+msgstr "Abbruch durch den Benutzer angefordert."
+
+#: src/installlogdialog.cpp:296
 msgid "Process finished with exit code %1."
 msgstr "Prozess mit Exit-Code %1 beendet."
 
-#: src/installlogdialog.cpp:174
+#: src/installlogdialog.cpp:301
+msgid "Installation cancelled by the user."
+msgstr "Installation vom Benutzer abgebrochen."
+
+#: src/installlogdialog.cpp:303
 msgid "Completed successfully."
 msgstr "Erfolgreich abgeschlossen."
 
-#: src/installlogdialog.cpp:175
+#: src/installlogdialog.cpp:304
 msgid "Failed. Please check the log."
 msgstr "Fehlgeschlagen. Bitte prüfen Sie das Protokoll."
 
-#: src/main.cpp:95 src/mainwindow.cpp:21 src/mainwindow.cpp:53
+#: src/main.cpp:94 src/mainwindow.cpp:21 src/mainwindow.cpp:53
 msgid "Miryu Hardware Manager"
 msgstr "Miryu Hardware-Verwaltung"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 msgid "View hardware information and manage device drivers"
 msgstr "Hardwareinformationen anzeigen und Gerätetreiber verwalten"
 
-#: src/main.cpp:99
+#: src/main.cpp:98
 msgid "(C) 2026 Miryu"
 msgstr "(C) 2026 Miryu"
 
@@ -397,154 +670,6 @@ msgstr "(C) 2026 Miryu"
 msgid "Basic Information"
 msgstr "Grundinformationen"
 
-#: src/mainwindow.cpp:68
+#: src/mainwindow.cpp:67
 msgid "Driver Management"
 msgstr "Treiberverwaltung"
-
-#: src/driverscripts.cpp
-msgid "Started at"
-msgstr "Gestartet um"
-
-#: src/driverscripts.cpp
-msgid "Checking akmods support package..."
-msgstr "Akmods-Unterstützungspaket wird geprüft …"
-
-#: src/driverscripts.cpp
-msgid "akmods-evernight is not installed, installing it now..."
-msgstr "akmods-evernight ist nicht installiert, wird jetzt installiert …"
-
-#: src/driverscripts.cpp
-msgid "Certificate and key files already exist, skipping generation."
-msgstr "Zertifikat- und Schlüsseldateien existieren bereits, Erzeugung wird übersprungen."
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca was not found after installing akmods-evernight."
-msgstr "FEHLER: kmodgenca wurde nach der Installation von akmods-evernight nicht gefunden."
-
-#: src/driverscripts.cpp
-msgid "Generating new signing key and certificate using kmodgenca..."
-msgstr "Neuer Signaturschlüssel und neues Zertifikat werden mit kmodgenca erzeugt …"
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca failed."
-msgstr "FEHLER: kmodgenca ist fehlgeschlagen."
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca did not create certificate files."
-msgstr "FEHLER: kmodgenca hat keine Zertifikatdateien erzeugt."
-
-#: src/driverscripts.cpp
-msgid "Certificate and key files generated successfully."
-msgstr "Zertifikat- und Schlüsseldateien wurden erfolgreich erzeugt."
-
-#: src/driverscripts.cpp
-msgid "Checking if certificate is already enrolled..."
-msgstr "Es wird geprüft, ob das Zertifikat bereits registriert ist …"
-
-#: src/driverscripts.cpp
-msgid "Certificate is already enrolled in MOK, skipping import."
-msgstr "Das Zertifikat ist bereits in MOK registriert, Import wird übersprungen."
-
-#: src/driverscripts.cpp
-msgid "MOK import request for this certificate was already submitted."
-msgstr "Die MOK-Importanfrage für dieses Zertifikat wurde bereits gesendet."
-
-#: src/driverscripts.cpp
-msgid "Certificate is not enrolled in MOK, importing it now..."
-msgstr "Das Zertifikat ist nicht in MOK registriert, Import wird jetzt durchgeführt …"
-
-#: src/driverscripts.cpp
-msgid "MOK import request submitted successfully."
-msgstr "MOK-Importanfrage wurde erfolgreich gesendet."
-
-#: src/driverscripts.cpp
-msgid "MOK import request already exists."
-msgstr "MOK-Importanfrage existiert bereits."
-
-#: src/driverscripts.cpp
-msgid "MOK import failed with exit code %1. Error output:"
-msgstr "MOK-Import mit Rückgabecode %1 fehlgeschlagen. Fehlerausgabe:"
-
-#: src/driverscripts.cpp
-msgid "Package manager: %1"
-msgstr "Paketmanager: %1"
-
-#: src/driverscripts.cpp
-msgid "Starting MOK configuration..."
-msgstr "MOK-Konfiguration wird gestartet …"
-
-#: src/driverscripts.cpp
-msgid "Removing all previous NVIDIA driver packages..."
-msgstr "Alle alten NVIDIA-Treiberpakete werden entfernt …"
-
-#: src/driverscripts.cpp
-msgid "Installing NVIDIA driver packages..."
-msgstr "NVIDIA-Treiberpakete werden installiert …"
-
-#: src/driverscripts.cpp
-msgid "Finished at"
-msgstr "Beendet um"
-
-#: src/driverscripts.cpp
-msgid "NVIDIA driver installation completed successfully."
-msgstr "NVIDIA-Treiberinstallation wurde erfolgreich abgeschlossen."
-
-#: src/driverscripts.cpp
-msgid "MOK configuration completed successfully."
-msgstr "MOK-Konfiguration wurde erfolgreich abgeschlossen."
-
-#: src/driverscripts.cpp
-msgid "Installing %1..."
-msgstr "%1 wird installiert …"
-
-#: src/driverscripts.cpp
-msgid "Package installation completed successfully."
-msgstr "Paketinstallation wurde erfolgreich abgeschlossen."
-
-#: src/driverscripts.cpp
-msgid "Removing %1..."
-msgstr "%1 wird entfernt …"
-
-#: src/driverscripts.cpp
-msgid "Package removal completed successfully."
-msgstr "Paketentfernung wurde erfolgreich abgeschlossen."
-
-#: src/driverscripts.cpp
-msgid "Removing NVIDIA driver packages..."
-msgstr "NVIDIA-Treiberpakete werden entfernt …"
-
-#: src/driverscripts.cpp
-msgid "NVIDIA driver packages removed."
-msgstr "NVIDIA-Treiberpakete wurden entfernt."
-
-#: src/driverscripts.cpp
-msgid "The open-source Nouveau driver will be used after reboot."
-msgstr "Nach dem Neustart wird der Open-Source-Treiber Nouveau verwendet."
-
-#: src/driverscripts.cpp
-msgid "MOK certificate already exists, skipping registration."
-msgstr "MOK-Zertifikat existiert bereits, Registrierung wird übersprungen."
-
-#: src/driverpage.cpp
-msgid "You have already registered the Secure Boot MOK."
-msgstr "Sie haben bereits einen Secure Boot MOK registriert."
-
-#: src/driverpage.cpp
-msgid "%1 was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it."
-msgstr "%1 wurde erfolgreich installiert. Öffnen Sie die Systemüberwachung und warten Sie, bis die cc1-Prozesse und der anschließende dnf5-Prozess abgeschlossen sind, und starten Sie dann neu, um den Treiber zu verwenden."
-
-#: src/driverscripts.cpp
-msgid "No previous NVIDIA driver packages found."
-msgstr "Keine vorhandenen NVIDIA-Treiberpakete gefunden."
-
-#: src/driverscripts.cpp
-msgid "Optional CUDA package \"%1\" could not be installed; continuing without it."
-msgstr "Das optionale CUDA-Paket \"%1\" konnte nicht installiert werden; die Installation wird ohne es fortgesetzt."
-
-#: src/driverscripts.cpp
-msgid "Verifying installation..."
-msgstr "Installation wird überprüft …"
-
-#: src/driverscripts.cpp
-msgid "ERROR: package \"%1\" was not installed."
-msgstr "FEHLER: Paket \"%1\" wurde nicht installiert."

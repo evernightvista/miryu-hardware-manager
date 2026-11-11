@@ -183,6 +183,42 @@ QStringList nvidiaCleanupLines(const QString &message)
     return lines;
 }
 
+// Packages installed alongside the driver that do not disappear when the
+// kernel module package is removed: userspace daemons, Python bindings and the
+// kmod builds produced by akmods.  The pattern intentionally avoids unrelated
+// packages such as razercfg or logitechmediaserver.
+QString vendorPatternFor(const QString &package)
+{
+    if (package.contains(QLatin1String("openrazer"))) {
+        return QStringLiteral("openrazer");
+    }
+    if (package.contains(QLatin1String("logitech"))) {
+        return QStringLiteral("trueforce|^akmod-logitech|^kmod-logitech|^dkms-logitech");
+    }
+    return QString();
+}
+
+QStringList relatedPackageCleanupLines(const QString &pattern)
+{
+    QStringList lines;
+    lines << echoLine(i18n("Removing remaining related packages..."));
+    lines << QStringLiteral("RELATED=$(rpm -qa --queryformat '%{NAME}\\n' "
+                            "| grep -iE ")
+                 + shellQuote(pattern)
+                 + QStringLiteral(" || true)");
+    lines << QStringLiteral("if [ -n \"$RELATED\" ]; then");
+    lines << QStringLiteral("  echo \"$RELATED\" | sed 's/^/  - /'");
+    lines << QStringLiteral("  \"$PKG_MGR\" remove -y $RELATED 2>/dev/null || true");
+    lines << QStringLiteral("else");
+    lines << QStringLiteral("  ") + echoLine(i18n("No related packages left."));
+    lines << QStringLiteral("fi");
+    lines << QStringLiteral("AKMOD_NAME=$(echo \"$PACKAGE\" | sed 's/^akmod-//')");
+    lines << QStringLiteral("if [ -n \"$AKMOD_NAME\" ] && [ -d \"/var/cache/akmods/$AKMOD_NAME\" ]; then");
+    lines << QStringLiteral("  rm -rf \"/var/cache/akmods/$AKMOD_NAME\"");
+    lines << QStringLiteral("fi");
+    return lines;
+}
+
 QStringList installFooter(const QString &message)
 {
     QStringList lines;
@@ -228,13 +264,22 @@ QString DriverScripts::nvidiaInstall(const NvidiaInstallOptions &options)
     const QString cudaPackage = options.packages.value(1);
 
     lines << echoLine(i18n("Installing NVIDIA driver packages..."));
-    lines << QStringLiteral("\"$PKG_MGR\" install -y ") + eraseFlag + shellQuote(akmodPackage);
-    if (!cudaPackage.isEmpty()) {
-        lines << QStringLiteral("\"$PKG_MGR\" install -y ") + eraseFlag + shellQuote(cudaPackage)
-                     + QStringLiteral(" || ")
-                     + echoLine(i18n("Optional CUDA package \"%1\" could not be installed; "
-                                     "continuing without it.",
+    if (cudaPackage.isEmpty()) {
+        lines << QStringLiteral("\"$PKG_MGR\" install -y ") + eraseFlag + shellQuote(akmodPackage);
+    } else {
+        // The CUDA utility package provides nvidia-smi, so install it together
+        // with the driver in one transaction.  Not every branch is published
+        // for every Fedora release, therefore fall back to the driver alone
+        // instead of aborting the whole installation.
+        lines << QStringLiteral("if ! \"$PKG_MGR\" install -y ") + eraseFlag
+                     + shellQuote(akmodPackage) + QLatin1Char(' ') + shellQuote(cudaPackage)
+                     + QStringLiteral("; then");
+        lines << QStringLiteral("  ")
+                     + echoLine(i18n("The CUDA package \"%1\" could not be installed; "
+                                     "retrying with the driver alone...",
                                      cudaPackage));
+        lines << QStringLiteral("  \"$PKG_MGR\" install -y ") + eraseFlag + shellQuote(akmodPackage);
+        lines << QStringLiteral("fi");
     }
 
     // Verify the outcome explicitly so the exit code always reflects whether
@@ -246,6 +291,20 @@ QString DriverScripts::nvidiaInstall(const NvidiaInstallOptions &options)
     lines << QStringLiteral("  ")
                  + echoLine(i18n("ERROR: package \"%1\" was not installed.", akmodPackage));
     lines << QStringLiteral("  exit 1");
+    lines << QStringLiteral("fi");
+
+    // nvidia-smi lives in the CUDA subpackage, which is published per Fedora
+    // release.  Report its absence explicitly instead of staying silent.
+    lines << QString();
+    lines << echoLine(i18n("Checking nvidia-smi..."));
+    lines << QStringLiteral("if [ -x /usr/bin/nvidia-smi ]; then");
+    lines << QStringLiteral("  ") + echoLine(i18n("nvidia-smi is available."));
+    lines << QStringLiteral("else");
+    lines << QStringLiteral("  ")
+                 + echoLine(i18n("WARNING: nvidia-smi is missing. It is provided by the "
+                                 "CUDA package \"%1\", which is not available for this "
+                                 "driver branch on your Fedora release.",
+                                 cudaPackage));
     lines << QStringLiteral("fi");
 
     const QStringList footer = installFooter(i18n("NVIDIA driver installation completed successfully."));
@@ -298,6 +357,12 @@ QString DriverScripts::packageAction(const QString &logPath, const QString &loca
     } else {
         lines << echoLine(i18n("Removing %1...", package));
         lines << QStringLiteral("\"$PKG_MGR\" remove -y \"$PACKAGE\"");
+        const QString pattern = vendorPatternFor(package);
+        if (!pattern.isEmpty()) {
+            for (const QString &line : relatedPackageCleanupLines(pattern)) {
+                lines << line;
+            }
+        }
         lines << echoLine(i18n("Package removal completed successfully."));
     }
     lines << dateEcho(i18n("Finished at"));

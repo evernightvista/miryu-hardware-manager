@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: miryu-hardware-manager 45.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 19:41+0800\n"
+"Report-Msgid-Bugs-To: contact@miryu.gaming\n"
+"POT-Creation-Date: 2026-11-11 14:27+0800\n"
 "PO-Revision-Date: 2026-11-10 20:00+0800\n"
 "Last-Translator: Miryu <contact@miryu.gaming>\n"
 "Language-Team: Simplified Chinese\n"
@@ -16,105 +16,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Miryu Hardware Manager\n"
 
-#: src/basicinfopage.cpp:74
+#: src/basicinfopage.cpp:76
 msgid "Processor"
 msgstr "处理器"
 
-#: src/basicinfopage.cpp:77
+#: src/basicinfopage.cpp:79
 msgid "Memory"
 msgstr "运行内存"
 
-#: src/basicinfopage.cpp:80
+#: src/basicinfopage.cpp:82
 msgid "Storage"
 msgstr "存储空间"
 
-#: src/basicinfopage.cpp:83
+#: src/basicinfopage.cpp:85
 msgid "Graphics Card"
 msgstr "显卡"
 
-#: src/basicinfopage.cpp:150
-msgid "Device: %1"
-msgstr "设备：%1"
-
-#: src/basicinfopage.cpp:154
-msgid "%1 cores, %2 threads"
-msgstr "%1 核 %2 线程"
-
-#: src/basicinfopage.cpp:156 src/basicinfopage.cpp:164 src/driverutils.cpp:88
-#: src/driverutils.cpp:119 src/systeminfo.cpp:173 src/systeminfo.cpp:177
-#: src/systeminfo.cpp:180
-msgid "Not available"
-msgstr "不可用"
-
-#: src/basicinfopage.cpp:159 src/basicinfopage.cpp:169
-msgid "%1 GB"
-msgstr "%1 GB"
-
-#: src/basicinfopage.cpp:161 src/basicinfopage.cpp:170
-msgid "%1 GB available"
-msgstr "%1 GB 可用"
-
-#: src/basicinfopage.cpp:163
-msgid "%1 GB usable, %2 GB available"
-msgstr "%1 GB 可用总量，%2 GB 当前可用"
-
-#: src/basicinfopage.cpp:96
+#: src/basicinfopage.cpp:95
 msgid "Show all graphics cards"
 msgstr "显示所有显卡"
 
 #: src/basicinfopage.cpp:173
+msgid "Device: %1"
+msgstr "设备：%1"
+
+#: src/basicinfopage.cpp:177
+msgid "%1 cores, %2 threads"
+msgstr "%1 核 %2 线程"
+
+#: src/basicinfopage.cpp:179 src/basicinfopage.cpp:189
+#: src/basicinfopage.cpp:192 src/systeminfo.cpp:288 src/systeminfo.cpp:308
+#: src/systeminfo.cpp:311 src/systeminfo.cpp:314
+msgid "Not available"
+msgstr "不可用"
+
+#: src/basicinfopage.cpp:184 src/basicinfopage.cpp:200
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: src/basicinfopage.cpp:186
+msgid "%1 GB usable, %2 GB available"
+msgstr "%1 GB 可用总量，%2 GB 当前可用"
+
+#: src/basicinfopage.cpp:201
+msgid "%1 GB available"
+msgstr "%1 GB 可用"
+
+#: src/basicinfopage.cpp:204
 msgid "Driver version: %1"
 msgstr "驱动版本：%1"
 
-#: src/driverpage.cpp:60
+#: src/driverpage.cpp:72
+msgid "Yes"
+msgstr "是"
+
+#: src/driverpage.cpp:73
+msgid "No"
+msgstr "否"
+
+#: src/driverpage.cpp:91
 msgid "Installed"
 msgstr "已安装"
 
-#: src/driverpage.cpp:60 src/systeminfo.cpp:171
+#: src/driverpage.cpp:91 src/systeminfo.cpp:305
 msgid "Not installed"
 msgstr "未安装"
 
-#: src/driverpage.cpp:99
+#: src/driverpage.cpp:119
 msgid "Logitech TrueForce Driver"
 msgstr "罗技 TrueForce 驱动"
 
-#: src/driverpage.cpp:107
+#: src/driverpage.cpp:128
 msgid "Razer Driver"
 msgstr "雷蛇驱动"
 
-#: src/driverpage.cpp:121
+#: src/driverpage.cpp:142
 msgid "Register Secure Boot MOK"
 msgstr "注册安全启动 MOK"
 
-#: src/driverpage.cpp:132 src/driverpage.cpp:135
+#: src/driverpage.cpp:152 src/driverpage.cpp:155
 msgid "Logitech TrueForce driver"
 msgstr "罗技 TrueForce 驱动"
 
-#: src/driverpage.cpp:138 src/driverpage.cpp:141
+#: src/driverpage.cpp:158 src/driverpage.cpp:161
 msgid "Razer driver"
 msgstr "雷蛇驱动"
 
-#: src/driverpage.cpp:162
+#: src/driverpage.cpp:182
 msgid "NVIDIA Drivers"
 msgstr "NVIDIA 驱动"
 
-#: src/driverpage.cpp:165
+#: src/driverpage.cpp:185
 msgid "Current driver: detecting..."
 msgstr "当前驱动：正在检测…"
 
-#: src/driverpage.cpp:183
+#: src/driverpage.cpp:203
 msgid "Install / Switch"
 msgstr "安装 / 切换"
 
-#: src/driverpage.cpp:186 src/driverpage.cpp:403
+#: src/driverpage.cpp:206 src/driverpage.cpp:398
 msgid "Revert to Nouveau"
 msgstr "回退到 Nouveau"
 
-#: src/driverpage.cpp:234
+#: src/driverpage.cpp:254
 msgid "Install"
 msgstr "安装"
 
-#: src/driverpage.cpp:235
+#: src/driverpage.cpp:255
 msgid "Uninstall"
 msgstr "卸载"
 
@@ -138,39 +146,161 @@ msgstr "安全启动：已禁用"
 msgid "Display server: %1"
 msgstr "显示服务器：%1"
 
-#: src/driverpage.cpp:318
+#: src/driverpage.cpp:312
 msgid "Already Installed"
 msgstr "已安装"
 
-#: src/driverpage.cpp:319
+#: src/driverpage.cpp:313
 msgid ""
 "The driver package \"%1\" is already installed.\n"
 "No further action is required."
-msgstr "驱动包“%1”已安装。\n无需进一步操作。"
+msgstr ""
+"驱动包“%1”已安装。\n"
+"无需进一步操作。"
 
-#: src/driverpage.cpp:329
+#: src/driverpage.cpp:322
 msgid "Different Driver Installed"
 msgstr "已安装其他驱动"
 
-#: src/driverpage.cpp:330
+#: src/driverpage.cpp:323
 msgid ""
 "The package \"%1\" is currently installed.\n"
 "Installing \"%2\" will replace it.\n"
 "\n"
 "Continue?"
-msgstr "当前已安装软件包“%1”。\n安装“%2”将替换它。\n\n是否继续？"
+msgstr ""
+"当前已安装软件包“%1”。\n"
+"安装“%2”将替换它。\n"
+"\n"
+"是否继续？"
 
-#: src/driverpage.cpp:346
+#: src/driverpage.cpp:337 src/driverpage.cpp:509
 msgid "Secure Boot Detected"
 msgstr "检测到安全启动"
 
-#: src/driverpage.cpp:347
+#: src/driverpage.cpp:338
 msgid ""
 "Secure Boot is enabled. The NVIDIA kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
-msgstr "安全启动已启用，NVIDIA 内核模块必须签名。\n现在配置 MOK（机器所有者密钥）吗？"
+msgstr ""
+"安全启动已启用，NVIDIA 内核模块必须签名。\n"
+"现在配置 MOK（机器所有者密钥）吗？"
 
-#: src/driverpage.cpp:506
+#: src/driverpage.cpp:360
+msgid "NVIDIA Driver Installation Log"
+msgstr "NVIDIA 驱动安装日志"
+
+#: src/driverpage.cpp:368
+msgid "Installation Failed"
+msgstr "安装失败"
+
+#: src/driverpage.cpp:369
+msgid ""
+"The installation did not complete. Please check the log:\n"
+"%1"
+msgstr ""
+"安装未完成，请检查日志：\n"
+"%1"
+
+#: src/driverpage.cpp:378
+msgid ""
+"The NVIDIA driver was installed successfully. Open System Monitor and wait "
+"for the cc1 processes and the subsequent dnf5 process to finish, then reboot "
+"to start using it.\n"
+"\n"
+"Log saved to: %1"
+msgstr ""
+"NVIDIA 驱动已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完"
+"成后，然后重启即可开始使用。\n"
+"\n"
+"日志已保存至：%1"
+
+#: src/driverpage.cpp:386
+msgid ""
+"nvidia-smi is not installed. The CUDA package for this driver branch is not "
+"available, so the nvidia-smi monitoring tool is missing."
+msgstr ""
+"nvidia-smi 未安装。此驱动分支没有可用的 CUDA 软件包，因此缺少 nvidia-smi 监控"
+"工具。"
+
+#: src/driverpage.cpp:390 src/driverpage.cpp:556
+msgid "Installation Complete"
+msgstr "安装完成"
+
+#: src/driverpage.cpp:399
+msgid ""
+"This will remove the NVIDIA driver packages and switch back to the Nouveau "
+"driver.\n"
+"\n"
+"Continue?"
+msgstr ""
+"这将卸载 NVIDIA 驱动包并切换回 Nouveau 驱动。\n"
+"\n"
+"是否继续？"
+
+#: src/driverpage.cpp:407
+msgid "Nouveau Restore Log"
+msgstr "Nouveau 恢复日志"
+
+#: src/driverpage.cpp:414 src/driverpage.cpp:563
+msgid "Uninstall Complete"
+msgstr "卸载完成"
+
+#: src/driverpage.cpp:415
+msgid ""
+"The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
+msgstr "NVIDIA 驱动包已卸载，请重启后使用 Nouveau 驱动。"
+
+#: src/driverpage.cpp:418 src/driverpage.cpp:467 src/driverpage.cpp:494
+#: src/driverpage.cpp:545
+msgid "Operation Failed"
+msgstr "操作失败"
+
+#: src/driverpage.cpp:419 src/driverpage.cpp:468 src/driverpage.cpp:495
+#: src/driverpage.cpp:546
+msgid ""
+"The operation did not complete. Please check the log:\n"
+"%1"
+msgstr ""
+"操作未完成，请检查日志：\n"
+"%1"
+
+#: src/driverpage.cpp:430 src/driverpage.cpp:437
+msgid "Secure Boot MOK"
+msgstr "安全启动 MOK"
+
+#: src/driverpage.cpp:431
+msgid ""
+"Secure Boot on your computer firmware is disabled or the firmware does not "
+"support Secure Boot."
+msgstr "你的计算机固件上的安全启动已经关闭或固件不支持安全启动。"
+
+#: src/driverpage.cpp:438
+msgid "You have already registered the Secure Boot MOK."
+msgstr "您已注册安全启动 MOK。"
+
+#: src/driverpage.cpp:449
+msgid "Install akmods-evernight"
+msgstr "安装 akmods-evernight"
+
+#: src/driverpage.cpp:450
+msgid ""
+"akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
+"It is not installed yet. Install it first and then continue with MOK "
+"registration?"
+msgstr ""
+"生成并注册安全启动 MOK 需要 akmods-evernight。\n"
+"该软件包尚未安装，是否先安装它，然后继续注册 MOK？"
+
+#: src/driverpage.cpp:458 src/driverpage.cpp:530
+msgid "%1 - Installation Log"
+msgstr "%1 - 安装日志"
+
+#: src/driverpage.cpp:485
+msgid "MOK Configuration Log"
+msgstr "MOK 配置日志"
+
+#: src/driverpage.cpp:510
 msgid ""
 "Secure Boot is enabled. The %1 kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
@@ -178,218 +308,340 @@ msgstr ""
 "安全启动已启用，%1 内核模块必须签名。\n"
 "现在配置 MOK（机器所有者密钥）吗？"
 
-#: src/driverpage.cpp:360
-msgid "Confirm Installation"
-msgstr "确认安装"
-
-#: src/driverpage.cpp:361
-msgid ""
-"The following packages will be installed:\n"
-"\n"
-"%1\n"
-"\n"
-"Do you want to continue?"
-msgstr "将安装以下软件包：\n\n%1\n\n是否继续？"
-
-#: src/driverpage.cpp:379
-msgid "NVIDIA Driver Installation Log"
-msgstr "NVIDIA 驱动安装日志"
-
-#: src/driverpage.cpp:383
-msgid "Installation Failed"
-msgstr "安装失败"
-
-#: src/driverpage.cpp:384
-msgid ""
-"The installation did not complete. Please check the log:\n"
-"%1"
-msgstr "安装未完成，请检查日志：\n%1"
-
-#: src/driverpage.cpp:392
-msgid "Installation Complete"
-msgstr "安装完成"
-
-#: src/driverpage.cpp
-msgid "The NVIDIA driver was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it.\n\nLog saved to: %1"
-msgstr "NVIDIA 驱动已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完成后，然后重启即可开始使用。\n\n日志已保存至：%1"
-
-#: src/driverpage.cpp:404
-msgid ""
-"This will remove the NVIDIA driver packages and switch back to the Nouveau "
-"driver.\n"
-"\n"
-"Continue?"
-msgstr "这将卸载 NVIDIA 驱动包并切换回 Nouveau 驱动。\n\n是否继续？"
-
-#: src/driverpage.cpp:412
-msgid "Nouveau Restore Log"
-msgstr "Nouveau 恢复日志"
-
-#: src/driverpage.cpp:418
-msgid "Revert Complete"
-msgstr "回退完成"
-
-#: src/driverpage.cpp:419
-msgid ""
-"The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
-msgstr "NVIDIA 驱动包已卸载，请重启后使用 Nouveau 驱动。"
-
-#: src/driverpage.cpp:422 src/driverpage.cpp:459 src/driverpage.cpp:489
-msgid "Operation Failed"
-msgstr "操作失败"
-
-#: src/driverpage.cpp:423 src/driverpage.cpp:460 src/driverpage.cpp:490
-msgid ""
-"The operation did not complete. Please check the log:\n"
-"%1"
-msgstr "操作未完成，请检查日志：\n%1"
-
-#: src/driverpage.cpp:433 src/driverpage.cpp:440
-msgid "Secure Boot MOK"
-msgstr "安全启动 MOK"
-
-#: src/driverpage.cpp:435
-msgid ""
-"Secure Boot on your computer firmware is disabled or the firmware does not "
-"support Secure Boot."
-msgstr "你的计算机固件上的安全启动已经关闭或固件不支持安全启动。"
-
-#: src/driverpage.cpp:454
-msgid "Install akmods-evernight"
-msgstr "安装 akmods-evernight"
-
-#: src/driverpage.cpp:455
-msgid ""
-"akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
-"It is not installed yet. Install it first and then continue with MOK "
-"registration?"
-msgstr "生成并注册安全启动 MOK 需要 akmods-evernight。\n该软件包尚未安装，是否先安装它，然后继续注册 MOK？"
-
-#: src/driverpage.cpp:485
-msgid "MOK Configuration Log"
-msgstr "MOK 配置日志"
-
-#: src/driverpage.cpp:471
+#: src/driverpage.cpp:521
 msgid "Uninstall Driver"
 msgstr "卸载驱动"
 
-#: src/driverpage.cpp:472
+#: src/driverpage.cpp:522
 msgid "Remove the %1 from this system?"
 msgstr "是否从系统中卸载%1？"
 
-#: src/driverpage.cpp:480
-msgid "%1 - Installation Log"
-msgstr "%1 - 安装日志"
-
-#: src/driverpage.cpp:481
+#: src/driverpage.cpp:531
 msgid "%1 - Removal Log"
 msgstr "%1 - 卸载日志"
 
-#: src/driverpage.cpp:501
+#: src/driverpage.cpp:557
+msgid ""
+"%1 was installed successfully. Open System Monitor and wait for the cc1 "
+"processes and the subsequent dnf5 process to finish, then reboot to start "
+"using it."
+msgstr ""
+"%1 已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完成后，然"
+"后重启即可开始使用。"
+
+#: src/driverpage.cpp:564
+msgid "%1 was removed successfully."
+msgstr "%1 已成功卸载。"
+
+#: src/driverpage.cpp:574
 msgid "Set MOK Password"
 msgstr "设置 MOK 密码"
 
-#: src/driverpage.cpp:502
+#: src/driverpage.cpp:575
 msgid ""
 "Enter a password for the Machine Owner Key (MOK).\n"
 "You will need to enter it after reboot:"
-msgstr "请输入 MOK（机器所有者密钥）密码。\n重启后需要输入此密码："
+msgstr ""
+"请输入 MOK（机器所有者密钥）密码。\n"
+"重启后需要输入此密码："
 
-#: src/driverpage.cpp:510
+#: src/driverpage.cpp:583
 msgid "Confirm MOK Password"
 msgstr "确认 MOK 密码"
 
-#: src/driverpage.cpp:511
+#: src/driverpage.cpp:584
 msgid "Re-enter the password to confirm:"
 msgstr "请再次输入密码以确认："
 
-#: src/driverpage.cpp:514
+#: src/driverpage.cpp:587
 msgid "Password Mismatch"
 msgstr "密码不匹配"
 
-#: src/driverpage.cpp:515
+#: src/driverpage.cpp:588
 msgid "The passwords do not match. MOK configuration was skipped."
 msgstr "密码不匹配，已跳过 MOK 配置。"
 
-#: src/driverpage.cpp:525
+#: src/driverpage.cpp:598
 msgid "MOK Configuration Complete"
 msgstr "MOK 配置完成"
 
-#: src/driverpage.cpp:526
+#: src/driverpage.cpp:599
 msgid ""
 "After rebooting, the MOK management screen will appear.\n"
 "Choose \"Enroll MOK\" and enter this password:\n"
 "\n"
 "%1"
-msgstr "重启后将显示 MOK 管理界面。\n请选择“Enroll MOK”并输入以下密码：\n\n%1"
+msgstr ""
+"重启后将显示 MOK 管理界面。\n"
+"请选择“Enroll MOK”并输入以下密码：\n"
+"\n"
+"%1"
 
-#: src/driverutils.cpp:109
+#: src/driverpage.cpp:606
+msgid "Operation Cancelled"
+msgstr "操作已取消"
+
+#: src/driverpage.cpp:607
+msgid ""
+"The operation was cancelled before it completed. Changes already made may be "
+"partially applied. Please check the log:\n"
+"%1"
+msgstr ""
+"操作在完成前被取消，已做的更改可能只应用了一部分。请检查日志：\n"
+"%1"
+
+#: src/driverscripts.cpp:46
+msgid "Started at"
+msgstr "开始时间"
+
+#: src/driverscripts.cpp:53
+msgid "Checking akmods support package..."
+msgstr "正在检查 akmods 支持包……"
+
+#: src/driverscripts.cpp:55
+msgid "akmods-evernight is not installed, installing it now..."
+msgstr "未安装 akmods-evernight，正在安装……"
+
+#: src/driverscripts.cpp:75
+msgid "MOK certificate already exists, skipping registration."
+msgstr "MOK 证书已存在，跳过注册。"
+
+#: src/driverscripts.cpp:80
+msgid "Certificate and key files already exist, skipping generation."
+msgstr "证书和密钥文件已存在，跳过生成。"
+
+#: src/driverscripts.cpp:89
+msgid "ERROR: kmodgenca was not found after installing akmods-evernight."
+msgstr "错误：安装 akmods-evernight 后仍未找到 kmodgenca。"
+
+#: src/driverscripts.cpp:103
+msgid "Generating new signing key and certificate using kmodgenca..."
+msgstr "正在使用 kmodgenca 生成新的签名密钥和证书……"
+
+#: src/driverscripts.cpp:110
+msgid "ERROR: kmodgenca failed."
+msgstr "错误：kmodgenca 执行失败。"
+
+#: src/driverscripts.cpp:114
+msgid "ERROR: kmodgenca did not create certificate files."
+msgstr "错误：kmodgenca 未生成证书文件。"
+
+#: src/driverscripts.cpp:117
+msgid "Certificate and key files generated successfully."
+msgstr "证书和密钥文件生成成功。"
+
+#: src/driverscripts.cpp:120
+msgid "Checking if certificate is already enrolled..."
+msgstr "正在检查证书是否已注册……"
+
+#: src/driverscripts.cpp:126
+msgid "Certificate is already enrolled in MOK, skipping import."
+msgstr "证书已在 MOK 中注册，跳过导入。"
+
+#: src/driverscripts.cpp:132
+msgid "MOK import request for this certificate was already submitted."
+msgstr "该证书的 MOK 导入请求已提交过。"
+
+#: src/driverscripts.cpp:134
+msgid "Certificate is not enrolled in MOK, importing it now..."
+msgstr "证书尚未在 MOK 中注册，正在导入……"
+
+#: src/driverscripts.cpp:142
+msgid "MOK import request submitted successfully."
+msgstr "MOK 导入请求提交成功。"
+
+#: src/driverscripts.cpp:146
+msgid "MOK import request already exists."
+msgstr "MOK 导入请求已存在。"
+
+#: src/driverscripts.cpp:149
+msgid "MOK import failed with exit code %1. Error output:"
+msgstr "MOK 导入失败，退出码 %1。错误输出："
+
+#: src/driverscripts.cpp:181
+msgid "No previous NVIDIA driver packages found."
+msgstr "未发现已安装的 NVIDIA 驱动软件包。"
+
+#: src/driverscripts.cpp:204
+msgid "Removing remaining related packages..."
+msgstr "正在移除其余相关软件包……"
+
+#: src/driverscripts.cpp:213
+msgid "No related packages left."
+msgstr "没有剩余的相关软件包。"
+
+#: src/driverscripts.cpp:225 src/driverscripts.cpp:368
+#: src/driverscripts.cpp:382
+msgid "Finished at"
+msgstr "结束时间"
+
+#: src/driverscripts.cpp:235 src/driverscripts.cpp:322
+#: src/driverscripts.cpp:343
+msgid "Package manager: %1"
+msgstr "软件包管理器：%1"
+
+#: src/driverscripts.cpp:239 src/driverscripts.cpp:323
+#: src/driverscripts.cpp:346
+msgid "Starting MOK configuration..."
+msgstr "正在配置 MOK……"
+
+#: src/driverscripts.cpp:251
+msgid "Removing all previous NVIDIA driver packages..."
+msgstr "正在移除所有旧的 NVIDIA 驱动相关软件包……"
+
+#: src/driverscripts.cpp:266
+msgid "Installing NVIDIA driver packages..."
+msgstr "正在安装 NVIDIA 驱动软件包……"
+
+#: src/driverscripts.cpp:278
+msgid ""
+"The CUDA package \"%1\" could not be installed; retrying with the driver "
+"alone..."
+msgstr "CUDA 软件包“%1”安装失败，改为仅安装驱动后重试…"
+
+#: src/driverscripts.cpp:288
+msgid "Verifying installation..."
+msgstr "正在验证安装……"
+
+#: src/driverscripts.cpp:292
+msgid "ERROR: package \"%1\" was not installed."
+msgstr "错误：软件包 \"%1\" 未安装。"
+
+#: src/driverscripts.cpp:299
+msgid "Checking nvidia-smi..."
+msgstr "正在检查 nvidia-smi…"
+
+#: src/driverscripts.cpp:301
+msgid "nvidia-smi is available."
+msgstr "nvidia-smi 可用。"
+
+#: src/driverscripts.cpp:304
+msgid ""
+"WARNING: nvidia-smi is missing. It is provided by the CUDA package \"%1\", "
+"which is not available for this driver branch on your Fedora release."
+msgstr ""
+"警告：缺少 nvidia-smi。它由 CUDA 软件包“%1”提供，而该软件包在你的 Fedora 版本"
+"中没有对应此驱动分支的构建。"
+
+#: src/driverscripts.cpp:310
+msgid "NVIDIA driver installation completed successfully."
+msgstr "NVIDIA 驱动安装成功完成。"
+
+#: src/driverscripts.cpp:329
+msgid "MOK configuration completed successfully."
+msgstr "MOK 配置成功完成。"
+
+#: src/driverscripts.cpp:352
+msgid "Installing %1..."
+msgstr "正在安装 %1……"
+
+#: src/driverscripts.cpp:356
+msgid "Package installation completed successfully."
+msgstr "软件包安装成功完成。"
+
+#: src/driverscripts.cpp:358
+msgid "Removing %1..."
+msgstr "正在移除 %1……"
+
+#: src/driverscripts.cpp:366
+msgid "Package removal completed successfully."
+msgstr "软件包移除成功完成。"
+
+#: src/driverscripts.cpp:377
+msgid "Removing NVIDIA driver packages..."
+msgstr "正在移除 NVIDIA 驱动软件包……"
+
+#: src/driverscripts.cpp:380
+msgid "NVIDIA driver packages removed."
+msgstr "NVIDIA 驱动软件包已移除。"
+
+#: src/driverscripts.cpp:381
+msgid "The open-source Nouveau driver will be used after reboot."
+msgstr "重启后将使用开源 Nouveau 驱动。"
+
+#: src/driverutils.cpp:91
 msgid "Hyper-V Graphics"
 msgstr "Hyper-V 显卡"
 
-#: src/driverutils.cpp:160
+#: src/driverutils.cpp:155
 msgid "NVIDIA Latest (open kernel module)"
 msgstr "NVIDIA 最新版（开源内核模块）"
 
-#: src/driverutils.cpp:248 src/systeminfo.cpp:33 src/systeminfo.cpp:56
-#: src/systeminfo.cpp:95
+#: src/driverutils.cpp:231 src/systeminfo.cpp:144 src/systeminfo.cpp:167
+#: src/systeminfo.cpp:206
 msgid "Unknown"
 msgstr "未知"
 
-#: src/installlogdialog.cpp:49
+#: src/installlogdialog.cpp:106
 msgid "Preparing..."
 msgstr "正在准备…"
 
-#: src/installlogdialog.cpp:70
+#: src/installlogdialog.cpp:127
+msgid "Cancel"
+msgstr "取消"
+
+#: src/installlogdialog.cpp:130
 msgid "Close"
 msgstr "关闭"
 
-#: src/installlogdialog.cpp:85
+#: src/installlogdialog.cpp:147
 msgid "Error: Cannot create temporary directory."
 msgstr "错误：无法创建临时目录。"
 
-#: src/installlogdialog.cpp:86 src/installlogdialog.cpp:95
-#: src/installlogdialog.cpp:124
+#: src/installlogdialog.cpp:148 src/installlogdialog.cpp:158
+#: src/installlogdialog.cpp:196
 msgid "Failed to start the installation."
 msgstr "无法启动安装。"
 
-#: src/installlogdialog.cpp:94
+#: src/installlogdialog.cpp:157
 msgid "Error: Cannot write temporary script."
 msgstr "错误：无法写入临时脚本。"
 
-#: src/installlogdialog.cpp:103
+#: src/installlogdialog.cpp:167
 msgid "Log file: %1"
 msgstr "日志文件：%1"
 
-#: src/installlogdialog.cpp:123
+#: src/installlogdialog.cpp:195
 msgid "Failed to start pkexec."
 msgstr "无法启动 pkexec。"
 
-#: src/installlogdialog.cpp:133
+#: src/installlogdialog.cpp:210
 msgid "Running..."
 msgstr "正在运行…"
 
-#: src/installlogdialog.cpp:170
+#: src/installlogdialog.cpp:240
+msgid "Cancelling..."
+msgstr "正在取消……"
+
+#: src/installlogdialog.cpp:242
+msgid "Cancellation requested by the user."
+msgstr "用户请求取消。"
+
+#: src/installlogdialog.cpp:296
 msgid "Process finished with exit code %1."
 msgstr "进程已结束，退出代码 %1。"
 
-#: src/installlogdialog.cpp:174
+#: src/installlogdialog.cpp:301
+msgid "Installation cancelled by the user."
+msgstr "安装已被用户取消。"
+
+#: src/installlogdialog.cpp:303
 msgid "Completed successfully."
 msgstr "已成功完成。"
 
-#: src/installlogdialog.cpp:175
+#: src/installlogdialog.cpp:304
 msgid "Failed. Please check the log."
 msgstr "失败，请检查日志。"
 
-#: src/main.cpp:95 src/mainwindow.cpp:21 src/mainwindow.cpp:53
+#: src/main.cpp:94 src/mainwindow.cpp:21 src/mainwindow.cpp:53
 msgid "Miryu Hardware Manager"
 msgstr "Miryu 硬件管理器"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 msgid "View hardware information and manage device drivers"
 msgstr "查看硬件信息并管理设备驱动"
 
-#: src/main.cpp:99
+#: src/main.cpp:98
 msgid "(C) 2026 Miryu"
 msgstr "(C) 2026 Miryu"
 
@@ -397,154 +649,6 @@ msgstr "(C) 2026 Miryu"
 msgid "Basic Information"
 msgstr "基本信息"
 
-#: src/mainwindow.cpp:68
+#: src/mainwindow.cpp:67
 msgid "Driver Management"
 msgstr "驱动管理"
-
-#: src/driverscripts.cpp
-msgid "Started at"
-msgstr "开始时间"
-
-#: src/driverscripts.cpp
-msgid "Checking akmods support package..."
-msgstr "正在检查 akmods 支持包……"
-
-#: src/driverscripts.cpp
-msgid "akmods-evernight is not installed, installing it now..."
-msgstr "未安装 akmods-evernight，正在安装……"
-
-#: src/driverscripts.cpp
-msgid "Certificate and key files already exist, skipping generation."
-msgstr "证书和密钥文件已存在，跳过生成。"
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca was not found after installing akmods-evernight."
-msgstr "错误：安装 akmods-evernight 后仍未找到 kmodgenca。"
-
-#: src/driverscripts.cpp
-msgid "Generating new signing key and certificate using kmodgenca..."
-msgstr "正在使用 kmodgenca 生成新的签名密钥和证书……"
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca failed."
-msgstr "错误：kmodgenca 执行失败。"
-
-#: src/driverscripts.cpp
-msgid "ERROR: kmodgenca did not create certificate files."
-msgstr "错误：kmodgenca 未生成证书文件。"
-
-#: src/driverscripts.cpp
-msgid "Certificate and key files generated successfully."
-msgstr "证书和密钥文件生成成功。"
-
-#: src/driverscripts.cpp
-msgid "Checking if certificate is already enrolled..."
-msgstr "正在检查证书是否已注册……"
-
-#: src/driverscripts.cpp
-msgid "Certificate is already enrolled in MOK, skipping import."
-msgstr "证书已在 MOK 中注册，跳过导入。"
-
-#: src/driverscripts.cpp
-msgid "MOK import request for this certificate was already submitted."
-msgstr "该证书的 MOK 导入请求已提交过。"
-
-#: src/driverscripts.cpp
-msgid "Certificate is not enrolled in MOK, importing it now..."
-msgstr "证书尚未在 MOK 中注册，正在导入……"
-
-#: src/driverscripts.cpp
-msgid "MOK import request submitted successfully."
-msgstr "MOK 导入请求提交成功。"
-
-#: src/driverscripts.cpp
-msgid "MOK import request already exists."
-msgstr "MOK 导入请求已存在。"
-
-#: src/driverscripts.cpp
-msgid "MOK import failed with exit code %1. Error output:"
-msgstr "MOK 导入失败，退出码 %1。错误输出："
-
-#: src/driverscripts.cpp
-msgid "Package manager: %1"
-msgstr "软件包管理器：%1"
-
-#: src/driverscripts.cpp
-msgid "Starting MOK configuration..."
-msgstr "正在配置 MOK……"
-
-#: src/driverscripts.cpp
-msgid "Removing all previous NVIDIA driver packages..."
-msgstr "正在移除所有旧的 NVIDIA 驱动相关软件包……"
-
-#: src/driverscripts.cpp
-msgid "Installing NVIDIA driver packages..."
-msgstr "正在安装 NVIDIA 驱动软件包……"
-
-#: src/driverscripts.cpp
-msgid "Finished at"
-msgstr "结束时间"
-
-#: src/driverscripts.cpp
-msgid "NVIDIA driver installation completed successfully."
-msgstr "NVIDIA 驱动安装成功完成。"
-
-#: src/driverscripts.cpp
-msgid "MOK configuration completed successfully."
-msgstr "MOK 配置成功完成。"
-
-#: src/driverscripts.cpp
-msgid "Installing %1..."
-msgstr "正在安装 %1……"
-
-#: src/driverscripts.cpp
-msgid "Package installation completed successfully."
-msgstr "软件包安装成功完成。"
-
-#: src/driverscripts.cpp
-msgid "Removing %1..."
-msgstr "正在移除 %1……"
-
-#: src/driverscripts.cpp
-msgid "Package removal completed successfully."
-msgstr "软件包移除成功完成。"
-
-#: src/driverscripts.cpp
-msgid "Removing NVIDIA driver packages..."
-msgstr "正在移除 NVIDIA 驱动软件包……"
-
-#: src/driverscripts.cpp
-msgid "NVIDIA driver packages removed."
-msgstr "NVIDIA 驱动软件包已移除。"
-
-#: src/driverscripts.cpp
-msgid "The open-source Nouveau driver will be used after reboot."
-msgstr "重启后将使用开源 Nouveau 驱动。"
-
-#: src/driverscripts.cpp
-msgid "MOK certificate already exists, skipping registration."
-msgstr "MOK 证书已存在，跳过注册。"
-
-#: src/driverpage.cpp
-msgid "You have already registered the Secure Boot MOK."
-msgstr "您已注册安全启动 MOK。"
-
-#: src/driverpage.cpp
-msgid "%1 was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it."
-msgstr "%1 已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完成后，然后重启即可开始使用。"
-
-#: src/driverscripts.cpp
-msgid "No previous NVIDIA driver packages found."
-msgstr "未发现已安装的 NVIDIA 驱动软件包。"
-
-#: src/driverscripts.cpp
-msgid "Optional CUDA package \"%1\" could not be installed; continuing without it."
-msgstr "可选的 CUDA 软件包 \"%1\" 未能安装，将在没有它的情况下继续。"
-
-#: src/driverscripts.cpp
-msgid "Verifying installation..."
-msgstr "正在验证安装……"
-
-#: src/driverscripts.cpp
-msgid "ERROR: package \"%1\" was not installed."
-msgstr "错误：软件包 \"%1\" 未安装。"

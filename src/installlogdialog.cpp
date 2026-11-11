@@ -17,10 +17,65 @@
 
 #include <KLocalizedString>
 
+#include <csignal>
+#include <sys/types.h>
+#include <unistd.h>
+
 namespace
 {
 const char *const kHelperPath = "/usr/libexec/miryu-hardware-manager-helper";
+
+// Collect every process that belongs to the session created for our child.
+// The helper is started with setsid(), so the session id is the pid returned by
+// QProcess and no unrelated process (for example another dnf5 started by the
+// user) can match.
+QList<qint64> processesInSession(qint64 sessionId)
+{
+    QList<qint64> result;
+    const QDir proc(QStringLiteral("/proc"));
+    const QStringList entries = proc.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+    for (const QString &entry : entries) {
+        bool ok = false;
+        const qint64 pid = entry.toLongLong(&ok);
+        if (!ok) {
+            continue;
+        }
+        QFile file(proc.filePath(entry + QStringLiteral("/stat")));
+        if (!file.open(QIODevice::ReadOnly)) {
+            continue;
+        }
+        const QByteArray stat = file.readAll();
+        const int commEnd = stat.lastIndexOf(')');
+        if (commEnd < 0) {
+            continue;
+        }
+        // Fields after the command name: state, ppid, pgrp, session, ...
+        const QList<QByteArray> fields = stat.mid(commEnd + 2).split(' ');
+        if (fields.size() < 4) {
+            continue;
+        }
+        if (fields.at(3).toLongLong() == sessionId) {
+            result.append(pid);
+        }
+    }
+    return result;
 }
+
+void signalProcessTree(qint64 rootPid, int signal)
+{
+    if (rootPid <= 0) {
+        return;
+    }
+    // The helper is the session and process group leader, so the negative pid
+    // reaches pkexec, the shell wrapper, dnf5 and the akmod build children.
+    ::kill(static_cast<pid_t>(-rootPid), signal);
+    for (const qint64 pid : processesInSession(rootPid)) {
+        if (pid != static_cast<qint64>(::getpid())) {
+            ::kill(static_cast<pid_t>(pid), signal);
+        }
+    }
+}
+} // namespace
 
 InstallLogDialog::InstallLogDialog(const QString &title, QWidget *parent)
     : QDialog(parent)
@@ -31,6 +86,7 @@ InstallLogDialog::InstallLogDialog(const QString &title, QWidget *parent)
 InstallLogDialog::~InstallLogDialog()
 {
     if (m_process && m_process->state() != QProcess::NotRunning) {
+        signalProcessTree(m_process->processId(), SIGKILL);
         m_process->kill();
         m_process->waitForFinished(2000);
     }
@@ -68,11 +124,15 @@ void InstallLogDialog::buildUi(const QString &title)
 
     auto *buttonRow = new QHBoxLayout;
     buttonRow->addStretch();
+    m_cancelButton = new QPushButton(i18n("Cancel"), this);
+    m_cancelButton->hide();
+    buttonRow->addWidget(m_cancelButton);
     m_closeButton = new QPushButton(i18n("Close"), this);
     m_closeButton->setEnabled(false);
     buttonRow->addWidget(m_closeButton);
     layout->addLayout(buttonRow);
 
+    connect(m_cancelButton, &QPushButton::clicked, this, &InstallLogDialog::cancel);
     connect(m_closeButton, &QPushButton::clicked, this, &QDialog::accept);
 }
 
@@ -110,6 +170,13 @@ void InstallLogDialog::startScript(const QString &script, const QString &logPath
     m_process->setProcessChannelMode(QProcess::MergedChannels);
     m_decoder.resetState();
 
+    // Run the privileged command in its own session/process group so that a
+    // user-initiated cancellation can stop the whole tree (helper, bash and
+    // the package manager), not just pkexec.
+    m_process->setChildProcessModifier([] {
+        ::setsid();
+    });
+
     connect(m_process, &QProcess::readyReadStandardOutput, this, &InstallLogDialog::onReadyRead);
     connect(m_process, &QProcess::readyReadStandardError, this, &InstallLogDialog::onReadyRead);
     connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
@@ -127,8 +194,12 @@ void InstallLogDialog::startScript(const QString &script, const QString &logPath
     if (!m_process->waitForStarted(5000)) {
         appendText(i18n("Failed to start pkexec.") + QLatin1Char('\n'));
         m_statusLabel->setText(i18n("Failed to start the installation."));
-        m_process->deleteLater();
-        m_process = nullptr;
+        // waitForStarted() spins an event loop: the process may already have
+        // finished and cleared m_process while we were waiting.
+        if (m_process) {
+            m_process->deleteLater();
+            m_process = nullptr;
+        }
         m_closeButton->setEnabled(true);
         failEarly();
         return;
@@ -153,13 +224,50 @@ void InstallLogDialog::setRunning(bool running)
 {
     m_running = running;
     m_progress->setVisible(running);
+    m_cancelButton->setVisible(running);
+    m_cancelButton->setEnabled(running);
     m_closeButton->setEnabled(!running);
+}
+
+void InstallLogDialog::cancel()
+{
+    if (!m_running || !m_process) {
+        return;
+    }
+
+    m_cancelled = true;
+    m_cancelButton->setEnabled(false);
+    m_statusLabel->setText(i18n("Cancelling..."));
+    appendText(QLatin1Char('\n')
+               + i18n("Cancellation requested by the user.") + QLatin1Char('\n'));
+
+    const qint64 pid = m_process->processId();
+    if (pid <= 0) {
+        m_process->kill();
+        return;
+    }
+
+    // Kill only the process tree of this installation.  A plain "killall dnf5"
+    // would also terminate package transactions started elsewhere.
+    signalProcessTree(pid, SIGTERM);
+    QTimer::singleShot(5000, this, [this, pid] {
+        // The helper may already be gone while a stray dnf5 or akmod child
+        // survived the polite SIGTERM.
+        if ((m_process && m_process->state() != QProcess::NotRunning)
+            || !processesInSession(pid).isEmpty()) {
+            signalProcessTree(pid, SIGKILL);
+        }
+    });
 }
 
 void InstallLogDialog::failEarly()
 {
+    if (m_finished) {
+        return;
+    }
+    m_finished = true;
     QTimer::singleShot(0, this, [this] {
-        emit finished(false);
+        emit finished(false, false);
     });
 }
 
@@ -177,15 +285,24 @@ void InstallLogDialog::onReadyRead()
 
 void InstallLogDialog::onProcessFinished(int exitCode, QProcess::ExitStatus status)
 {
-    const bool success = (status == QProcess::NormalExit && exitCode == 0);
+    if (m_finished) {
+        return;
+    }
+    m_finished = true;
+
+    const bool success = !m_cancelled && (status == QProcess::NormalExit && exitCode == 0);
 
     appendText(QLatin1Char('\n')
                + i18n("Process finished with exit code %1.", exitCode)
                + QLatin1Char('\n'));
 
     setRunning(false);
-    m_statusLabel->setText(success ? i18n("Completed successfully.")
-                                   : i18n("Failed. Please check the log."));
+    if (m_cancelled) {
+        m_statusLabel->setText(i18n("Installation cancelled by the user."));
+    } else {
+        m_statusLabel->setText(success ? i18n("Completed successfully.")
+                                       : i18n("Failed. Please check the log."));
+    }
 
     if (m_process) {
         m_process->deleteLater();
@@ -196,7 +313,7 @@ void InstallLogDialog::onProcessFinished(int exitCode, QProcess::ExitStatus stat
         m_tempDir = nullptr;
     }
 
-    emit finished(success);
+    emit finished(success, m_cancelled);
 }
 
 void InstallLogDialog::appendText(const QString &text)
@@ -209,6 +326,14 @@ void InstallLogDialog::appendText(const QString &text)
     cursor.insertText(text);
     m_logEdit->setTextCursor(cursor);
     m_logEdit->ensureCursorVisible();
+}
+
+void InstallLogDialog::reject()
+{
+    if (m_running) {
+        return;
+    }
+    QDialog::reject();
 }
 
 void InstallLogDialog::closeEvent(QCloseEvent *event)

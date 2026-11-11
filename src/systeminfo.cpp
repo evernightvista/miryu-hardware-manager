@@ -305,7 +305,12 @@ SystemInfoData SystemInfo::collect()
             data.gpuDriverVersion = i18n("Not installed");
         }
     } else {
-        data.gpuDriverVersion = i18n("Not available");
+        // Non-NVIDIA hardware is driven by Mesa, so report the version of the
+        // mesa-dri-drivers package instead of pretending the driver is missing.
+        data.gpuDriverVersion = DriverUtils::mesaDriverVersion();
+        if (data.gpuDriverVersion.isEmpty()) {
+            data.gpuDriverVersion = i18n("Not available");
+        }
     }
     if (data.memoryType.isEmpty()) {
         data.memoryType = i18n("Not available");

@@ -17,6 +17,7 @@ bool isHyperV();
 QStringList gpuNames();
 QString installedNvidiaPackage();
 QString installedNvidiaVersion();
+QString mesaDriverVersion();
 QList<QPair<QString, QString>> availableNvidiaDrivers();
 QString cudaPackageFor(const QString &akmodPackage);
 

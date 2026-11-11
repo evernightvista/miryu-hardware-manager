@@ -149,6 +149,16 @@ QString DriverUtils::installedNvidiaVersion()
     return version.isEmpty() ? package : version;
 }
 
+QString DriverUtils::mesaDriverVersion()
+{
+    // %{VERSION} already excludes the release and the .fcXX distribution tag.
+    return runAndRead(QStringLiteral("rpm"),
+                      {QStringLiteral("-q"), QStringLiteral("--queryformat"),
+                       QStringLiteral("%{VERSION}"), QStringLiteral("mesa-dri-drivers")},
+                      5000)
+        .trimmed();
+}
+
 QList<QPair<QString, QString>> DriverUtils::availableNvidiaDrivers()
 {
     return {

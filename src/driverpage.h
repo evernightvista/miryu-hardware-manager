@@ -37,9 +37,12 @@ private:
     void onPackageAction(const QString &package, const QString &displayName, bool install);
 
     QString promptMokPassword();
-    void showMokInstructions(const QString &password);
+    void showMokInstructions(const QString &password, QWidget *parent = nullptr);
+    void showCancelled(const QString &logPath, QWidget *parent = nullptr);
+    // The finishing callback also receives the log dialog, so that result
+    // messages can be shown on top of it instead of behind it.
     void runScript(const QString &title, const QString &script,
-                   const std::function<void(bool)> &onFinished,
+                   const std::function<void(bool success, bool cancelled, QWidget *dialog)> &onFinished,
                    const QString &helperPath = QString());
 
     QLabel *m_currentDriverLabel = nullptr;

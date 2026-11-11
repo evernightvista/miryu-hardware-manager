@@ -25,8 +25,12 @@ public:
     QString logPath() const;
     bool isRunning() const;
 
+    // The dialog must stay visible while a privileged operation runs, so that
+    // the user can follow the log or press Cancel.
+    void reject() override;
+
 signals:
-    void finished(bool success);
+    void finished(bool success, bool cancelled);
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -35,6 +39,7 @@ private:
     void buildUi(const QString &title);
     void appendText(const QString &text);
     void setRunning(bool running);
+    void cancel();
     void onReadyRead();
     void onProcessFinished(int exitCode, QProcess::ExitStatus status);
     // Report failure for startup errors that never reach QProcess, so callers
@@ -44,12 +49,17 @@ private:
     QPlainTextEdit *m_logEdit = nullptr;
     QLabel *m_statusLabel = nullptr;
     QProgressBar *m_progress = nullptr;
+    QPushButton *m_cancelButton = nullptr;
     QPushButton *m_closeButton = nullptr;
     QProcess *m_process = nullptr;
     QTemporaryDir *m_tempDir = nullptr;
     QString m_logPath;
     QStringDecoder m_decoder{QStringDecoder::Utf8};
     bool m_running = false;
+    bool m_cancelled = false;
+    // Guards against reporting the outcome twice (early-start failure and a
+    // finished process can both fire on the same run).
+    bool m_finished = false;
 };
 
 #endif // INSTALLLOGDIALOG_H

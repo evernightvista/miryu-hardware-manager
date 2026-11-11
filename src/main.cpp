@@ -3,6 +3,9 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KLocalizedString>
+#include <QLibraryInfo>
+#include <QLocale>
+#include <QTranslator>
 
 #include "mainwindow.h"
 
@@ -69,6 +72,14 @@ int main(int argc, char *argv[])
     app.setApplicationName(QStringLiteral("miryu-hardware-manager"));
     app.setOrganizationDomain(QStringLiteral("miryu.gaming"));
     app.setStyleSheet(QString::fromLatin1(kStyleSheet));
+
+    // Qt's built-in dialog buttons (OK, Cancel, ...) are translated through the
+    // Qt catalogues, which are not loaded automatically in a KDE application.
+    QTranslator qtTranslator;
+    if (qtTranslator.load(QLocale(), QStringLiteral("qtbase"), QStringLiteral("_"),
+                          QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
+        app.installTranslator(&qtTranslator);
+    }
 
     QIcon appIcon = QIcon::fromTheme(QStringLiteral("yast-hardware"));
     if (appIcon.isNull()) {
