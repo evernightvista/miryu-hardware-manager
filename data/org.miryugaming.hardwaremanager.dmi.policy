@@ -4,8 +4,8 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
 
-  <vendor>Miryu Gaming</vendor>
-  <vendor_url>https://miryu.gaming</vendor_url>
+  <vendor>Evernight Vista Team</vendor>
+  <vendor_url>https://github.com/evernightvista/miryu-hardware-manager</vendor_url>
 
   <action id="org.miryugaming.hardwaremanager.dmi">
     <description>Read memory hardware information</description>
