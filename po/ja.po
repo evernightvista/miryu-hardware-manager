@@ -1,0 +1,550 @@
+# 日本語 (ja) translation for miryu-hardware-manager.
+# Copyright (C) 2026 Miryu
+# This file is distributed under the same license as the miryu-hardware-manager package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: miryu-hardware-manager 45.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 19:41+0800\n"
+"PO-Revision-Date: 2026-11-10 20:00+0800\n"
+"Last-Translator: Miryu <contact@miryu.gaming>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Miryu Hardware Manager\n"
+
+#: src/basicinfopage.cpp:74
+msgid "Processor"
+msgstr "プロセッサー"
+
+#: src/basicinfopage.cpp:77
+msgid "Memory"
+msgstr "メモリー"
+
+#: src/basicinfopage.cpp:80
+msgid "Storage"
+msgstr "ストレージ"
+
+#: src/basicinfopage.cpp:83
+msgid "Graphics Card"
+msgstr "グラフィックスカード"
+
+#: src/basicinfopage.cpp:150
+msgid "Device: %1"
+msgstr "デバイス: %1"
+
+#: src/basicinfopage.cpp:154
+msgid "%1 cores, %2 threads"
+msgstr "%1 コア / %2 スレッド"
+
+#: src/basicinfopage.cpp:156 src/basicinfopage.cpp:164 src/driverutils.cpp:88
+#: src/driverutils.cpp:119 src/systeminfo.cpp:173 src/systeminfo.cpp:177
+#: src/systeminfo.cpp:180
+msgid "Not available"
+msgstr "利用不可"
+
+#: src/basicinfopage.cpp:159 src/basicinfopage.cpp:169
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: src/basicinfopage.cpp:161 src/basicinfopage.cpp:170
+msgid "%1 GB available"
+msgstr "%1 GB 使用可能"
+
+#: src/basicinfopage.cpp:163
+msgid "%1 GB usable, %2 GB available"
+msgstr "%1 GB 使用可能、%2 GB 空き"
+
+#: src/basicinfopage.cpp:96
+msgid "Show all graphics cards"
+msgstr "すべてのグラフィックスカードを表示"
+
+#: src/basicinfopage.cpp:173
+msgid "Driver version: %1"
+msgstr "ドライバーのバージョン: %1"
+
+#: src/driverpage.cpp:60
+msgid "Installed"
+msgstr "インストール済み"
+
+#: src/driverpage.cpp:60 src/systeminfo.cpp:171
+msgid "Not installed"
+msgstr "未インストール"
+
+#: src/driverpage.cpp:99
+msgid "Logitech TrueForce Driver"
+msgstr "Logitech TrueForce ドライバー"
+
+#: src/driverpage.cpp:107
+msgid "Razer Driver"
+msgstr "Razer ドライバー"
+
+#: src/driverpage.cpp:121
+msgid "Register Secure Boot MOK"
+msgstr "セキュアブート MOK を登録"
+
+#: src/driverpage.cpp:132 src/driverpage.cpp:135
+msgid "Logitech TrueForce driver"
+msgstr "Logitech TrueForce ドライバー"
+
+#: src/driverpage.cpp:138 src/driverpage.cpp:141
+msgid "Razer driver"
+msgstr "Razer ドライバー"
+
+#: src/driverpage.cpp:162
+msgid "NVIDIA Drivers"
+msgstr "NVIDIA ドライバー"
+
+#: src/driverpage.cpp:165
+msgid "Current driver: detecting..."
+msgstr "現在のドライバー: 検出中..."
+
+#: src/driverpage.cpp:183
+msgid "Install / Switch"
+msgstr "インストール / 切り替え"
+
+#: src/driverpage.cpp:186 src/driverpage.cpp:403
+msgid "Revert to Nouveau"
+msgstr "Nouveau に戻す"
+
+#: src/driverpage.cpp:234
+msgid "Install"
+msgstr "インストール"
+
+#: src/driverpage.cpp:235
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: src/driverpage.cpp:281
+msgid "Current driver: not installed"
+msgstr "現在のドライバー: 未インストール"
+
+#: src/driverpage.cpp:282
+msgid "Current driver: %1"
+msgstr "現在のドライバー: %1"
+
+#: src/driverpage.cpp:285
+msgid "Secure Boot: enabled"
+msgstr "セキュアブート: 有効"
+
+#: src/driverpage.cpp:286
+msgid "Secure Boot: disabled"
+msgstr "セキュアブート: 無効"
+
+#: src/driverpage.cpp:287
+msgid "Display server: %1"
+msgstr "表示サーバー: %1"
+
+#: src/driverpage.cpp:318
+msgid "Already Installed"
+msgstr "すでにインストール済み"
+
+#: src/driverpage.cpp:319
+msgid ""
+"The driver package \"%1\" is already installed.\n"
+"No further action is required."
+msgstr "ドライバーパッケージ「%1」はすでにインストールされています。\n追加の操作は必要ありません。"
+
+#: src/driverpage.cpp:329
+msgid "Different Driver Installed"
+msgstr "別のドライバーがインストール済み"
+
+#: src/driverpage.cpp:330
+msgid ""
+"The package \"%1\" is currently installed.\n"
+"Installing \"%2\" will replace it.\n"
+"\n"
+"Continue?"
+msgstr "パッケージ「%1」が現在インストールされています。\n「%2」をインストールすると置き換えられます。\n\n続行しますか？"
+
+#: src/driverpage.cpp:346
+msgid "Secure Boot Detected"
+msgstr "セキュアブートを検出"
+
+#: src/driverpage.cpp:347
+msgid ""
+"Secure Boot is enabled. The NVIDIA kernel module must be signed.\n"
+"Configure a Machine Owner Key (MOK) now?"
+msgstr "セキュアブートが有効です。NVIDIA カーネルモジュールに署名が必要です。\n今すぐ Machine Owner Key (MOK) を設定しますか？"
+
+#: src/driverpage.cpp:506
+msgid ""
+"Secure Boot is enabled. The %1 kernel module must be signed.\n"
+"Configure a Machine Owner Key (MOK) now?"
+msgstr ""
+"セキュアブートが有効です。%1 のカーネルモジュールに署名が必要です。\n"
+"今すぐ Machine Owner Key (MOK) を設定しますか?"
+
+#: src/driverpage.cpp:360
+msgid "Confirm Installation"
+msgstr "インストールの確認"
+
+#: src/driverpage.cpp:361
+msgid ""
+"The following packages will be installed:\n"
+"\n"
+"%1\n"
+"\n"
+"Do you want to continue?"
+msgstr "次のパッケージをインストールします:\n\n%1\n\n続行しますか？"
+
+#: src/driverpage.cpp:379
+msgid "NVIDIA Driver Installation Log"
+msgstr "NVIDIA ドライバーのインストールログ"
+
+#: src/driverpage.cpp:383
+msgid "Installation Failed"
+msgstr "インストールに失敗しました"
+
+#: src/driverpage.cpp:384
+msgid ""
+"The installation did not complete. Please check the log:\n"
+"%1"
+msgstr "インストールが完了しませんでした。ログを確認してください:\n%1"
+
+#: src/driverpage.cpp:392
+msgid "Installation Complete"
+msgstr "インストール完了"
+
+#: src/driverpage.cpp
+msgid "The NVIDIA driver was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it.\n\nLog saved to: %1"
+msgstr "NVIDIA ドライバーは正常にインストールされました。システムモニターを開き、cc1 プロセスとその後の dnf5 プロセスの完了を待ってから再起動すると、使用を開始できます。\n\nログの保存先: %1"
+
+#: src/driverpage.cpp:404
+msgid ""
+"This will remove the NVIDIA driver packages and switch back to the Nouveau "
+"driver.\n"
+"\n"
+"Continue?"
+msgstr "NVIDIA ドライバーパッケージを削除し、Nouveau ドライバーに戻します。\n\n続行しますか？"
+
+#: src/driverpage.cpp:412
+msgid "Nouveau Restore Log"
+msgstr "Nouveau 復元ログ"
+
+#: src/driverpage.cpp:418
+msgid "Revert Complete"
+msgstr "復元完了"
+
+#: src/driverpage.cpp:419
+msgid ""
+"The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
+msgstr "NVIDIA ドライバーパッケージを削除しました。Nouveau ドライバーを使用するには再起動してください。"
+
+#: src/driverpage.cpp:422 src/driverpage.cpp:459 src/driverpage.cpp:489
+msgid "Operation Failed"
+msgstr "操作に失敗しました"
+
+#: src/driverpage.cpp:423 src/driverpage.cpp:460 src/driverpage.cpp:490
+msgid ""
+"The operation did not complete. Please check the log:\n"
+"%1"
+msgstr "操作が完了しませんでした。ログを確認してください:\n%1"
+
+#: src/driverpage.cpp:433 src/driverpage.cpp:440
+msgid "Secure Boot MOK"
+msgstr "セキュアブート MOK"
+
+#: src/driverpage.cpp:435
+msgid ""
+"Secure Boot on your computer firmware is disabled or the firmware does not "
+"support Secure Boot."
+msgstr "お使いのコンピューターのファームウェアで Secure Boot が無効になっているか、ファームウェアが Secure Boot に対応していません。"
+
+#: src/driverpage.cpp:454
+msgid "Install akmods-evernight"
+msgstr "akmods-evernight をインストール"
+
+#: src/driverpage.cpp:455
+msgid ""
+"akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
+"It is not installed yet. Install it first and then continue with MOK "
+"registration?"
+msgstr "Secure Boot の MOK を生成して登録するには akmods-evernight が必要です。\nまだインストールされていません。先にインストールしてから MOK の登録を続行しますか？"
+
+#: src/driverpage.cpp:485
+msgid "MOK Configuration Log"
+msgstr "MOK 設定ログ"
+
+#: src/driverpage.cpp:471
+msgid "Uninstall Driver"
+msgstr "ドライバーのアンインストール"
+
+#: src/driverpage.cpp:472
+msgid "Remove the %1 from this system?"
+msgstr "このシステムから%1を削除しますか？"
+
+#: src/driverpage.cpp:480
+msgid "%1 - Installation Log"
+msgstr "%1 - インストールログ"
+
+#: src/driverpage.cpp:481
+msgid "%1 - Removal Log"
+msgstr "%1 - 削除ログ"
+
+#: src/driverpage.cpp:501
+msgid "Set MOK Password"
+msgstr "MOK パスワードの設定"
+
+#: src/driverpage.cpp:502
+msgid ""
+"Enter a password for the Machine Owner Key (MOK).\n"
+"You will need to enter it after reboot:"
+msgstr "Machine Owner Key (MOK) のパスワードを入力してください。\n再起動後に必要になります:"
+
+#: src/driverpage.cpp:510
+msgid "Confirm MOK Password"
+msgstr "MOK パスワードの確認"
+
+#: src/driverpage.cpp:511
+msgid "Re-enter the password to confirm:"
+msgstr "確認のためパスワードを再入力してください:"
+
+#: src/driverpage.cpp:514
+msgid "Password Mismatch"
+msgstr "パスワードが一致しません"
+
+#: src/driverpage.cpp:515
+msgid "The passwords do not match. MOK configuration was skipped."
+msgstr "パスワードが一致しません。MOK の設定をスキップしました。"
+
+#: src/driverpage.cpp:525
+msgid "MOK Configuration Complete"
+msgstr "MOK 設定完了"
+
+#: src/driverpage.cpp:526
+msgid ""
+"After rebooting, the MOK management screen will appear.\n"
+"Choose \"Enroll MOK\" and enter this password:\n"
+"\n"
+"%1"
+msgstr "再起動後に MOK 管理画面が表示されます。\n「Enroll MOK」を選択し、次のパスワードを入力してください:\n\n%1"
+
+#: src/driverutils.cpp:109
+msgid "Hyper-V Graphics"
+msgstr "Hyper-V グラフィックス"
+
+#: src/driverutils.cpp:160
+msgid "NVIDIA Latest (open kernel module)"
+msgstr "NVIDIA 最新 (オープンカーネルモジュール)"
+
+#: src/driverutils.cpp:248 src/systeminfo.cpp:33 src/systeminfo.cpp:56
+#: src/systeminfo.cpp:95
+msgid "Unknown"
+msgstr "不明"
+
+#: src/installlogdialog.cpp:49
+msgid "Preparing..."
+msgstr "準備中..."
+
+#: src/installlogdialog.cpp:70
+msgid "Close"
+msgstr "閉じる"
+
+#: src/installlogdialog.cpp:85
+msgid "Error: Cannot create temporary directory."
+msgstr "エラー: 一時ディレクトリを作成できません。"
+
+#: src/installlogdialog.cpp:86 src/installlogdialog.cpp:95
+#: src/installlogdialog.cpp:124
+msgid "Failed to start the installation."
+msgstr "インストールを開始できませんでした。"
+
+#: src/installlogdialog.cpp:94
+msgid "Error: Cannot write temporary script."
+msgstr "エラー: 一時スクリプトを書き込めません。"
+
+#: src/installlogdialog.cpp:103
+msgid "Log file: %1"
+msgstr "ログファイル: %1"
+
+#: src/installlogdialog.cpp:123
+msgid "Failed to start pkexec."
+msgstr "pkexec を開始できませんでした。"
+
+#: src/installlogdialog.cpp:133
+msgid "Running..."
+msgstr "実行中..."
+
+#: src/installlogdialog.cpp:170
+msgid "Process finished with exit code %1."
+msgstr "プロセスが終了コード %1 で終了しました。"
+
+#: src/installlogdialog.cpp:174
+msgid "Completed successfully."
+msgstr "正常に完了しました。"
+
+#: src/installlogdialog.cpp:175
+msgid "Failed. Please check the log."
+msgstr "失敗しました。ログを確認してください。"
+
+#: src/main.cpp:95 src/mainwindow.cpp:21 src/mainwindow.cpp:53
+msgid "Miryu Hardware Manager"
+msgstr "Miryu ハードウェアマネージャー"
+
+#: src/main.cpp:97
+msgid "View hardware information and manage device drivers"
+msgstr "ハードウェア情報の表示とデバイスドライバーの管理"
+
+#: src/main.cpp:99
+msgid "(C) 2026 Miryu"
+msgstr "(C) 2026 Miryu"
+
+#: src/mainwindow.cpp:62
+msgid "Basic Information"
+msgstr "基本情報"
+
+#: src/mainwindow.cpp:68
+msgid "Driver Management"
+msgstr "ドライバー管理"
+
+#: src/driverscripts.cpp
+msgid "Started at"
+msgstr "開始時刻"
+
+#: src/driverscripts.cpp
+msgid "Checking akmods support package..."
+msgstr "akmods サポートパッケージを確認しています…"
+
+#: src/driverscripts.cpp
+msgid "akmods-evernight is not installed, installing it now..."
+msgstr "akmods-evernight がインストールされていないため、インストールしています…"
+
+#: src/driverscripts.cpp
+msgid "Certificate and key files already exist, skipping generation."
+msgstr "証明書と鍵ファイルは既に存在するため、生成をスキップします。"
+
+#: src/driverscripts.cpp
+msgid "ERROR: kmodgenca was not found after installing akmods-evernight."
+msgstr "エラー: akmods-evernight のインストール後に kmodgenca が見つかりませんでした。"
+
+#: src/driverscripts.cpp
+msgid "Generating new signing key and certificate using kmodgenca..."
+msgstr "kmodgenca を使用して新しい署名鍵と証明書を生成しています…"
+
+#: src/driverscripts.cpp
+msgid "ERROR: kmodgenca failed."
+msgstr "エラー: kmodgenca が失敗しました。"
+
+#: src/driverscripts.cpp
+msgid "ERROR: kmodgenca did not create certificate files."
+msgstr "エラー: kmodgenca が証明書ファイルを作成しませんでした。"
+
+#: src/driverscripts.cpp
+msgid "Certificate and key files generated successfully."
+msgstr "証明書と鍵ファイルを正常に生成しました。"
+
+#: src/driverscripts.cpp
+msgid "Checking if certificate is already enrolled..."
+msgstr "証明書が既に登録されているか確認しています…"
+
+#: src/driverscripts.cpp
+msgid "Certificate is already enrolled in MOK, skipping import."
+msgstr "証明書は既に MOK に登録されているため、インポートをスキップします。"
+
+#: src/driverscripts.cpp
+msgid "MOK import request for this certificate was already submitted."
+msgstr "この証明書の MOK インポート要求は既に送信されています。"
+
+#: src/driverscripts.cpp
+msgid "Certificate is not enrolled in MOK, importing it now..."
+msgstr "証明書が MOK に登録されていないため、インポートしています…"
+
+#: src/driverscripts.cpp
+msgid "MOK import request submitted successfully."
+msgstr "MOK インポート要求を正常に送信しました。"
+
+#: src/driverscripts.cpp
+msgid "MOK import request already exists."
+msgstr "MOK インポート要求は既に存在します。"
+
+#: src/driverscripts.cpp
+msgid "MOK import failed with exit code %1. Error output:"
+msgstr "MOK インポートが終了コード %1 で失敗しました。エラー出力:"
+
+#: src/driverscripts.cpp
+msgid "Package manager: %1"
+msgstr "パッケージマネージャー: %1"
+
+#: src/driverscripts.cpp
+msgid "Starting MOK configuration..."
+msgstr "MOK の設定を開始しています…"
+
+#: src/driverscripts.cpp
+msgid "Removing all previous NVIDIA driver packages..."
+msgstr "古い NVIDIA ドライバー関連パッケージをすべて削除しています…"
+
+#: src/driverscripts.cpp
+msgid "Installing NVIDIA driver packages..."
+msgstr "NVIDIA ドライバーパッケージをインストールしています…"
+
+#: src/driverscripts.cpp
+msgid "Finished at"
+msgstr "終了時刻"
+
+#: src/driverscripts.cpp
+msgid "NVIDIA driver installation completed successfully."
+msgstr "NVIDIA ドライバーのインストールが正常に完了しました。"
+
+#: src/driverscripts.cpp
+msgid "MOK configuration completed successfully."
+msgstr "MOK の設定が正常に完了しました。"
+
+#: src/driverscripts.cpp
+msgid "Installing %1..."
+msgstr "%1 をインストールしています…"
+
+#: src/driverscripts.cpp
+msgid "Package installation completed successfully."
+msgstr "パッケージのインストールが正常に完了しました。"
+
+#: src/driverscripts.cpp
+msgid "Removing %1..."
+msgstr "%1 を削除しています…"
+
+#: src/driverscripts.cpp
+msgid "Package removal completed successfully."
+msgstr "パッケージの削除が正常に完了しました。"
+
+#: src/driverscripts.cpp
+msgid "Removing NVIDIA driver packages..."
+msgstr "NVIDIA ドライバーパッケージを削除しています…"
+
+#: src/driverscripts.cpp
+msgid "NVIDIA driver packages removed."
+msgstr "NVIDIA ドライバーパッケージを削除しました。"
+
+#: src/driverscripts.cpp
+msgid "The open-source Nouveau driver will be used after reboot."
+msgstr "再起動後はオープンソースの Nouveau ドライバーが使用されます。"
+
+#: src/driverscripts.cpp
+msgid "MOK certificate already exists, skipping registration."
+msgstr "MOK 証明書は既に存在するため、登録をスキップします。"
+
+#: src/driverpage.cpp
+msgid "You have already registered the Secure Boot MOK."
+msgstr "セキュアブートの MOK は既に登録されています。"
+
+#: src/driverpage.cpp
+msgid "%1 was installed successfully. Open System Monitor and wait for the cc1 processes and the subsequent dnf5 process to finish, then reboot to start using it."
+msgstr "%1 は正常にインストールされました。システムモニターを開き、cc1 プロセスとその後の dnf5 プロセスの完了を待ってから再起動すると、使用を開始できます。"
+
+#: src/driverscripts.cpp
+msgid "No previous NVIDIA driver packages found."
+msgstr "以前の NVIDIA ドライバーパッケージは見つかりませんでした。"
+
+#: src/driverscripts.cpp
+msgid "Optional CUDA package \"%1\" could not be installed; continuing without it."
+msgstr "オプションの CUDA パッケージ \"%1\" をインストールできませんでした。これなしで続行します。"
+
+#: src/driverscripts.cpp
+msgid "Verifying installation..."
+msgstr "インストールを確認しています…"
+
+#: src/driverscripts.cpp
+msgid "ERROR: package \"%1\" was not installed."
+msgstr "エラー: パッケージ \"%1\" はインストールされませんでした。"

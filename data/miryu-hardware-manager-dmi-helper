@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+# Read-only helper: report the SMBIOS memory devices so the application can
+# display the memory generation and speed without running as root.
+if [ -x /usr/sbin/dmidecode ]; then
+  DMIDECODE=/usr/sbin/dmidecode
+elif [ -x /usr/bin/dmidecode ]; then
+  DMIDECODE=/usr/bin/dmidecode
+elif command -v dmidecode >/dev/null 2>&1; then
+  DMIDECODE="$(command -v dmidecode)"
+else
+  echo "ERROR: dmidecode is not installed." >&2
+  exit 127
+fi
+
+exec "$DMIDECODE" -t memory

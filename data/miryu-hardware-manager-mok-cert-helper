@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+# Read-only check for the akmods MOK certificate. Regular users may be unable
+# to traverse /etc/pki/akmods (mode 750), so this helper performs the test as
+# root. It never modifies the system.
+
+CERTIFICATE="/etc/pki/akmods/certs/public_key.der"
+
+if [ -f "$CERTIFICATE" ]; then
+  echo "present"
+else
+  echo "absent"
+fi

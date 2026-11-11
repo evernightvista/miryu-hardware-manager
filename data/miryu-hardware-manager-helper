@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_PATH="${1:-}"
+
+if [ -z "$SCRIPT_PATH" ]; then
+  echo "ERROR: no script path was provided." >&2
+  exit 126
+fi
+
+RESOLVED_PATH="$(readlink -f -- "$SCRIPT_PATH" 2>/dev/null || true)"
+
+case "$RESOLVED_PATH" in
+  /tmp/miryu-hardware-manager-*/*.sh)
+    ;;
+  *)
+    echo "ERROR: refused to run unexpected script path: $SCRIPT_PATH" >&2
+    exit 126
+    ;;
+esac
+
+if [ ! -f "$RESOLVED_PATH" ]; then
+  echo "ERROR: script does not exist: $RESOLVED_PATH" >&2
+  exit 127
+fi
+
+exec /usr/bin/bash "$RESOLVED_PATH"

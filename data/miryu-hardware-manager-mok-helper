@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+# Dedicated entry point for Secure Boot MOK operations. pkexec authorizes
+# org.miryugaming.hardwaremanager.mok for this path, so the authentication
+# prompt mentions MOK registration instead of generic driver installation.
+
+exec /usr/libexec/miryu-hardware-manager-helper "$@"

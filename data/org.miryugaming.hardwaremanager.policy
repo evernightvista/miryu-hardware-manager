@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+  <vendor>Miryu</vendor>
+  <vendor_url>https://miryu.gaming</vendor_url>
+
+  <action id="org.miryugaming.hardwaremanager.helper">
+    <description>Install or remove device drivers</description>
+    <message>Authentication is required to install or remove device drivers</message>
+
+    <description xml:lang="de">Gerätetreiber installieren oder entfernen</description>
+    <message xml:lang="de">Authentifizierung ist erforderlich, um Gerätetreiber zu installieren oder zu entfernen</message>
+
+    <description xml:lang="fr">Installer ou supprimer des pilotes de périphériques</description>
+    <message xml:lang="fr">Une authentification est requise pour installer ou supprimer des pilotes de périphériques</message>
+
+    <description xml:lang="ja">デバイスドライバーのインストールまたは削除</description>
+    <message xml:lang="ja">デバイスドライバーをインストールまたは削除するには認証が必要です</message>
+
+    <description xml:lang="ko">장치 드라이버 설치 또는 제거</description>
+    <message xml:lang="ko">장치 드라이버를 설치하거나 제거하려면 인증이 필요합니다</message>
+
+    <description xml:lang="zh_CN">安装或卸载设备驱动</description>
+    <message xml:lang="zh_CN">安装或卸载设备驱动需要认证</message>
+
+    <description xml:lang="zh_TW">安裝或卸載裝置驅動程式</description>
+    <message xml:lang="zh_TW">安裝或卸載裝置驅動程式需要認證</message>
+
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/miryu-hardware-manager-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+
+  <action id="org.miryugaming.hardwaremanager.mok">
+    <description>Register the Secure Boot Machine Owner Key</description>
+    <message>Authentication is required to register the Secure Boot MOK</message>
+
+    <description xml:lang="de">Secure-Boot-Machine-Owner-Key registrieren</description>
+    <message xml:lang="de">Authentifizierung ist erforderlich, um den Secure-Boot-MOK zu registrieren</message>
+
+    <description xml:lang="fr">Enregistrer la clé MOK de Secure Boot</description>
+    <message xml:lang="fr">Une authentification est requise pour enregistrer la clé MOK de Secure Boot</message>
+
+    <description xml:lang="ja">Secure Boot の Machine Owner Key を登録</description>
+    <message xml:lang="ja">Secure Boot の MOK を登録するには認証が必要です</message>
+
+    <description xml:lang="ko">Secure Boot 머신 소유자 키 등록</description>
+    <message xml:lang="ko">Secure Boot MOK를 등록하려면 인증이 필요합니다</message>
+
+    <description xml:lang="zh_CN">注册安全启动 MOK</description>
+    <message xml:lang="zh_CN">注册安全启动 MOK 需要认证</message>
+
+    <description xml:lang="zh_TW">註冊安全啟動 MOK</description>
+    <message xml:lang="zh_TW">註冊安全啟動 MOK 需要認證</message>
+
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/miryu-hardware-manager-mok-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+
+  <action id="org.miryugaming.hardwaremanager.mokcert">
+    <description>Check the Secure Boot MOK certificate</description>
+    <message>Authentication is required to read the Secure Boot MOK certificate status</message>
+
+    <description xml:lang="de">Secure-Boot-MOK-Zertifikat prüfen</description>
+    <message xml:lang="de">Authentifizierung ist erforderlich, um den Status des Secure-Boot-MOK-Zertifikats zu lesen</message>
+
+    <description xml:lang="fr">Vérifier le certificat MOK de Secure Boot</description>
+    <message xml:lang="fr">Une authentification est requise pour lire l'état du certificat MOK de Secure Boot</message>
+
+    <description xml:lang="ja">Secure Boot の MOK 証明書を確認</description>
+    <message xml:lang="ja">Secure Boot の MOK 証明書の状態を読み取るには認証が必要です</message>
+
+    <description xml:lang="ko">Secure Boot MOK 인증서 확인</description>
+    <message xml:lang="ko">Secure Boot MOK 인증서 상태를 읽으려면 인증이 필요합니다</message>
+
+    <description xml:lang="zh_CN">检查安全启动 MOK 证书</description>
+    <message xml:lang="zh_CN">读取安全启动 MOK 证书状态需要认证</message>
+
+    <description xml:lang="zh_TW">檢查安全啟動 MOK 憑證</description>
+    <message xml:lang="zh_TW">讀取安全啟動 MOK 憑證狀態需要認證</message>
+
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/miryu-hardware-manager-mok-cert-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+</policyconfig>
