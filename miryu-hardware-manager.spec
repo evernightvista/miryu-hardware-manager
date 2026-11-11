@@ -38,7 +38,7 @@ the Logitech TrueForce and Razer OpenRazer kernel drivers. Every privileged
 operation runs through polkit and displays a live installation log.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-main
 
 %build
 %cmake
