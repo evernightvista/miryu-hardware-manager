@@ -16,6 +16,7 @@ BuildRequires:  kf6-ki18n-devel
 BuildRequires:  kf6-kcrash-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
+BuildRequires:  kf6-kwidgetsaddons-devel
 
 Requires:       pciutils
 Requires:       dmidecode
@@ -63,7 +64,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/polkit-1/actions/org.miryugaming.hardwaremanager.dmi.policy
 
 %changelog
-* Fri Nov 12 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-4
+* Thu Nov 12 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-4
 - Fix no event sound bug
 
 * Wed Nov 11 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-3
