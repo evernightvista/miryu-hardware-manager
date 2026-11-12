@@ -6,151 +6,148 @@ msgid ""
 msgstr ""
 "Project-Id-Version: miryu-hardware-manager 45.0.0\n"
 "Report-Msgid-Bugs-To: contact@miryu.gaming\n"
-"POT-Creation-Date: 2026-11-11 14:27+0800\n"
-"PO-Revision-Date: 2026-11-10 20:00+0800\n"
+"POT-Creation-Date: 2026-11-12 09:53+0800\n"
+"PO-Revision-Date: 2026-11-12 09:34+0800\n"
 "Last-Translator: Miryu <contact@miryu.gaming>\n"
 "Language-Team: Simplified Chinese\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Miryu Hardware Manager\n"
 
-#: src/basicinfopage.cpp:76
+#: src/basicinfopage.cpp:77
 msgid "Processor"
 msgstr "处理器"
 
-#: src/basicinfopage.cpp:79
+#: src/basicinfopage.cpp:80
 msgid "Memory"
 msgstr "运行内存"
 
-#: src/basicinfopage.cpp:82
+#: src/basicinfopage.cpp:83
 msgid "Storage"
 msgstr "存储空间"
 
-#: src/basicinfopage.cpp:85
+#: src/basicinfopage.cpp:86
 msgid "Graphics Card"
 msgstr "显卡"
 
-#: src/basicinfopage.cpp:95
+#: src/basicinfopage.cpp:100
 msgid "Show all graphics cards"
 msgstr "显示所有显卡"
 
-#: src/basicinfopage.cpp:173
+#: src/basicinfopage.cpp:197
 msgid "Device: %1"
 msgstr "设备：%1"
 
-#: src/basicinfopage.cpp:177
+#: src/basicinfopage.cpp:201
 msgid "%1 cores, %2 threads"
 msgstr "%1 核 %2 线程"
 
-#: src/basicinfopage.cpp:179 src/basicinfopage.cpp:189
-#: src/basicinfopage.cpp:192 src/systeminfo.cpp:288 src/systeminfo.cpp:308
-#: src/systeminfo.cpp:311 src/systeminfo.cpp:314
+#: src/basicinfopage.cpp:203 src/basicinfopage.cpp:213
+#: src/basicinfopage.cpp:216 src/systeminfo.cpp:288 src/systeminfo.cpp:312
+#: src/systeminfo.cpp:316 src/systeminfo.cpp:319
 msgid "Not available"
 msgstr "不可用"
 
-#: src/basicinfopage.cpp:184 src/basicinfopage.cpp:200
+#: src/basicinfopage.cpp:208 src/basicinfopage.cpp:224
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: src/basicinfopage.cpp:186
+#: src/basicinfopage.cpp:210
 msgid "%1 GB usable, %2 GB available"
 msgstr "%1 GB 可用总量，%2 GB 当前可用"
 
-#: src/basicinfopage.cpp:201
+#: src/basicinfopage.cpp:225
 msgid "%1 GB available"
 msgstr "%1 GB 可用"
 
-#: src/basicinfopage.cpp:204
+#: src/basicinfopage.cpp:228
 msgid "Driver version: %1"
 msgstr "驱动版本：%1"
 
-#: src/driverpage.cpp:72
+#: src/driverpage.cpp:75
 msgid "Yes"
 msgstr "是"
 
-#: src/driverpage.cpp:73
+#: src/driverpage.cpp:76
 msgid "No"
 msgstr "否"
 
-#: src/driverpage.cpp:91
+#: src/driverpage.cpp:94
 msgid "Installed"
 msgstr "已安装"
 
-#: src/driverpage.cpp:91 src/systeminfo.cpp:305
+#: src/driverpage.cpp:94 src/systeminfo.cpp:305
 msgid "Not installed"
 msgstr "未安装"
 
-#: src/driverpage.cpp:119
+#: src/driverpage.cpp:122
 msgid "Logitech TrueForce Driver"
 msgstr "罗技 TrueForce 驱动"
 
-#: src/driverpage.cpp:128
+#: src/driverpage.cpp:131
 msgid "Razer Driver"
 msgstr "雷蛇驱动"
 
-#: src/driverpage.cpp:142
+#: src/driverpage.cpp:145
 msgid "Register Secure Boot MOK"
 msgstr "注册安全启动 MOK"
 
-#: src/driverpage.cpp:152 src/driverpage.cpp:155
+#: src/driverpage.cpp:155 src/driverpage.cpp:158
 msgid "Logitech TrueForce driver"
 msgstr "罗技 TrueForce 驱动"
 
-#: src/driverpage.cpp:158 src/driverpage.cpp:161
+#: src/driverpage.cpp:161 src/driverpage.cpp:164
 msgid "Razer driver"
 msgstr "雷蛇驱动"
 
-#: src/driverpage.cpp:182
+#: src/driverpage.cpp:185
 msgid "NVIDIA Drivers"
 msgstr "NVIDIA 驱动"
 
-#: src/driverpage.cpp:185
+#: src/driverpage.cpp:188
 msgid "Current driver: detecting..."
 msgstr "当前驱动：正在检测…"
 
-#: src/driverpage.cpp:203
+#: src/driverpage.cpp:206
 msgid "Install / Switch"
 msgstr "安装 / 切换"
 
-#: src/driverpage.cpp:206 src/driverpage.cpp:398
+#: src/driverpage.cpp:209 src/driverpage.cpp:403
 msgid "Revert to Nouveau"
 msgstr "回退到 Nouveau"
 
-#: src/driverpage.cpp:254
+#: src/driverpage.cpp:257
 msgid "Install"
 msgstr "安装"
 
-#: src/driverpage.cpp:255
+#: src/driverpage.cpp:258
 msgid "Uninstall"
 msgstr "卸载"
 
-#: src/driverpage.cpp:281
+#: src/driverpage.cpp:284
 msgid "Current driver: not installed"
 msgstr "当前驱动：未安装"
 
-#: src/driverpage.cpp:282
+#: src/driverpage.cpp:285
 msgid "Current driver: %1"
 msgstr "当前驱动：%1"
 
-#: src/driverpage.cpp:285
+#: src/driverpage.cpp:288
 msgid "Secure Boot: enabled"
 msgstr "安全启动：已启用"
 
-#: src/driverpage.cpp:286
+#: src/driverpage.cpp:289
 msgid "Secure Boot: disabled"
 msgstr "安全启动：已禁用"
 
-#: src/driverpage.cpp:287
+#: src/driverpage.cpp:290
 msgid "Display server: %1"
 msgstr "显示服务器：%1"
 
-#: src/driverpage.cpp:312
-msgid "Already Installed"
-msgstr "已安装"
-
-#: src/driverpage.cpp:313
+#: src/driverpage.cpp:316
 msgid ""
 "The driver package \"%1\" is already installed.\n"
 "No further action is required."
@@ -158,11 +155,15 @@ msgstr ""
 "驱动包“%1”已安装。\n"
 "无需进一步操作。"
 
-#: src/driverpage.cpp:322
+#: src/driverpage.cpp:319
+msgid "Already Installed"
+msgstr "已安装"
+
+#: src/driverpage.cpp:326
 msgid "Different Driver Installed"
 msgstr "已安装其他驱动"
 
-#: src/driverpage.cpp:323
+#: src/driverpage.cpp:327
 msgid ""
 "The package \"%1\" is currently installed.\n"
 "Installing \"%2\" will replace it.\n"
@@ -174,11 +175,11 @@ msgstr ""
 "\n"
 "是否继续？"
 
-#: src/driverpage.cpp:337 src/driverpage.cpp:509
+#: src/driverpage.cpp:341 src/driverpage.cpp:520
 msgid "Secure Boot Detected"
 msgstr "检测到安全启动"
 
-#: src/driverpage.cpp:338
+#: src/driverpage.cpp:342
 msgid ""
 "Secure Boot is enabled. The NVIDIA kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
@@ -186,15 +187,11 @@ msgstr ""
 "安全启动已启用，NVIDIA 内核模块必须签名。\n"
 "现在配置 MOK（机器所有者密钥）吗？"
 
-#: src/driverpage.cpp:360
+#: src/driverpage.cpp:364
 msgid "NVIDIA Driver Installation Log"
 msgstr "NVIDIA 驱动安装日志"
 
-#: src/driverpage.cpp:368
-msgid "Installation Failed"
-msgstr "安装失败"
-
-#: src/driverpage.cpp:369
+#: src/driverpage.cpp:373
 msgid ""
 "The installation did not complete. Please check the log:\n"
 "%1"
@@ -202,7 +199,11 @@ msgstr ""
 "安装未完成，请检查日志：\n"
 "%1"
 
-#: src/driverpage.cpp:378
+#: src/driverpage.cpp:376
+msgid "Installation Failed"
+msgstr "安装失败"
+
+#: src/driverpage.cpp:383
 msgid ""
 "The NVIDIA driver was installed successfully. Open System Monitor and wait "
 "for the cc1 processes and the subsequent dnf5 process to finish, then reboot "
@@ -210,12 +211,12 @@ msgid ""
 "\n"
 "Log saved to: %1"
 msgstr ""
-"NVIDIA 驱动已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完"
-"成后，然后重启即可开始使用。\n"
+"NVIDIA 驱动已成功安装。请打开系统监视器，等待 cc1 进程及后续的 dnf5 进程结"
+"束，然后重启即可开始使用。\n"
 "\n"
 "日志已保存至：%1"
 
-#: src/driverpage.cpp:386
+#: src/driverpage.cpp:391
 msgid ""
 "nvidia-smi is not installed. The CUDA package for this driver branch is not "
 "available, so the nvidia-smi monitoring tool is missing."
@@ -223,11 +224,11 @@ msgstr ""
 "nvidia-smi 未安装。此驱动分支没有可用的 CUDA 软件包，因此缺少 nvidia-smi 监控"
 "工具。"
 
-#: src/driverpage.cpp:390 src/driverpage.cpp:556
+#: src/driverpage.cpp:395 src/driverpage.cpp:574
 msgid "Installation Complete"
 msgstr "安装完成"
 
-#: src/driverpage.cpp:399
+#: src/driverpage.cpp:404
 msgid ""
 "This will remove the NVIDIA driver packages and switch back to the Nouveau "
 "driver.\n"
@@ -238,26 +239,21 @@ msgstr ""
 "\n"
 "是否继续？"
 
-#: src/driverpage.cpp:407
+#: src/driverpage.cpp:412
 msgid "Nouveau Restore Log"
 msgstr "Nouveau 恢复日志"
 
-#: src/driverpage.cpp:414 src/driverpage.cpp:563
-msgid "Uninstall Complete"
-msgstr "卸载完成"
-
-#: src/driverpage.cpp:415
+#: src/driverpage.cpp:420
 msgid ""
 "The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
 msgstr "NVIDIA 驱动包已卸载，请重启后使用 Nouveau 驱动。"
 
-#: src/driverpage.cpp:418 src/driverpage.cpp:467 src/driverpage.cpp:494
-#: src/driverpage.cpp:545
-msgid "Operation Failed"
-msgstr "操作失败"
+#: src/driverpage.cpp:422 src/driverpage.cpp:578
+msgid "Uninstall Complete"
+msgstr "卸载完成"
 
-#: src/driverpage.cpp:419 src/driverpage.cpp:468 src/driverpage.cpp:495
-#: src/driverpage.cpp:546
+#: src/driverpage.cpp:425 src/driverpage.cpp:477 src/driverpage.cpp:505
+#: src/driverpage.cpp:557
 msgid ""
 "The operation did not complete. Please check the log:\n"
 "%1"
@@ -265,25 +261,30 @@ msgstr ""
 "操作未完成，请检查日志：\n"
 "%1"
 
-#: src/driverpage.cpp:430 src/driverpage.cpp:437
-msgid "Secure Boot MOK"
-msgstr "安全启动 MOK"
+#: src/driverpage.cpp:428 src/driverpage.cpp:480 src/driverpage.cpp:508
+#: src/driverpage.cpp:560
+msgid "Operation Failed"
+msgstr "操作失败"
 
-#: src/driverpage.cpp:431
+#: src/driverpage.cpp:438
 msgid ""
 "Secure Boot on your computer firmware is disabled or the firmware does not "
 "support Secure Boot."
 msgstr "你的计算机固件上的安全启动已经关闭或固件不支持安全启动。"
 
-#: src/driverpage.cpp:438
+#: src/driverpage.cpp:440 src/driverpage.cpp:447
+msgid "Secure Boot MOK"
+msgstr "安全启动 MOK"
+
+#: src/driverpage.cpp:446
 msgid "You have already registered the Secure Boot MOK."
 msgstr "您已注册安全启动 MOK。"
 
-#: src/driverpage.cpp:449
+#: src/driverpage.cpp:458
 msgid "Install akmods-evernight"
 msgstr "安装 akmods-evernight"
 
-#: src/driverpage.cpp:450
+#: src/driverpage.cpp:459
 msgid ""
 "akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
 "It is not installed yet. Install it first and then continue with MOK "
@@ -292,15 +293,15 @@ msgstr ""
 "生成并注册安全启动 MOK 需要 akmods-evernight。\n"
 "该软件包尚未安装，是否先安装它，然后继续注册 MOK？"
 
-#: src/driverpage.cpp:458 src/driverpage.cpp:530
+#: src/driverpage.cpp:467 src/driverpage.cpp:541
 msgid "%1 - Installation Log"
 msgstr "%1 - 安装日志"
 
-#: src/driverpage.cpp:485
+#: src/driverpage.cpp:495
 msgid "MOK Configuration Log"
 msgstr "MOK 配置日志"
 
-#: src/driverpage.cpp:510
+#: src/driverpage.cpp:521
 msgid ""
 "Secure Boot is enabled. The %1 kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
@@ -308,36 +309,36 @@ msgstr ""
 "安全启动已启用，%1 内核模块必须签名。\n"
 "现在配置 MOK（机器所有者密钥）吗？"
 
-#: src/driverpage.cpp:521
+#: src/driverpage.cpp:532
 msgid "Uninstall Driver"
 msgstr "卸载驱动"
 
-#: src/driverpage.cpp:522
+#: src/driverpage.cpp:533
 msgid "Remove the %1 from this system?"
 msgstr "是否从系统中卸载%1？"
 
-#: src/driverpage.cpp:531
+#: src/driverpage.cpp:542
 msgid "%1 - Removal Log"
 msgstr "%1 - 卸载日志"
 
-#: src/driverpage.cpp:557
+#: src/driverpage.cpp:569
 msgid ""
 "%1 was installed successfully. Open System Monitor and wait for the cc1 "
 "processes and the subsequent dnf5 process to finish, then reboot to start "
 "using it."
 msgstr ""
-"%1 已成功安装，请打开系统监视器查看等待 cc1 进程和后期的 dnf5 进程完成后，然"
-"后重启即可开始使用。"
+"%1 已成功安装。请打开系统监视器，等待 cc1 进程及后续的 dnf5 进程结束，然后重"
+"启即可开始使用。"
 
-#: src/driverpage.cpp:564
+#: src/driverpage.cpp:577
 msgid "%1 was removed successfully."
 msgstr "%1 已成功卸载。"
 
-#: src/driverpage.cpp:574
+#: src/driverpage.cpp:588
 msgid "Set MOK Password"
 msgstr "设置 MOK 密码"
 
-#: src/driverpage.cpp:575
+#: src/driverpage.cpp:589
 msgid ""
 "Enter a password for the Machine Owner Key (MOK).\n"
 "You will need to enter it after reboot:"
@@ -345,27 +346,23 @@ msgstr ""
 "请输入 MOK（机器所有者密钥）密码。\n"
 "重启后需要输入此密码："
 
-#: src/driverpage.cpp:583
+#: src/driverpage.cpp:597
 msgid "Confirm MOK Password"
 msgstr "确认 MOK 密码"
 
-#: src/driverpage.cpp:584
+#: src/driverpage.cpp:598
 msgid "Re-enter the password to confirm:"
 msgstr "请再次输入密码以确认："
 
-#: src/driverpage.cpp:587
-msgid "Password Mismatch"
-msgstr "密码不匹配"
-
-#: src/driverpage.cpp:588
+#: src/driverpage.cpp:602
 msgid "The passwords do not match. MOK configuration was skipped."
 msgstr "密码不匹配，已跳过 MOK 配置。"
 
-#: src/driverpage.cpp:598
-msgid "MOK Configuration Complete"
-msgstr "MOK 配置完成"
+#: src/driverpage.cpp:604
+msgid "Password Mismatch"
+msgstr "密码不匹配"
 
-#: src/driverpage.cpp:599
+#: src/driverpage.cpp:614
 msgid ""
 "After rebooting, the MOK management screen will appear.\n"
 "Choose \"Enroll MOK\" and enter this password:\n"
@@ -377,11 +374,11 @@ msgstr ""
 "\n"
 "%1"
 
-#: src/driverpage.cpp:606
-msgid "Operation Cancelled"
-msgstr "操作已取消"
+#: src/driverpage.cpp:617
+msgid "MOK Configuration Complete"
+msgstr "MOK 配置完成"
 
-#: src/driverpage.cpp:607
+#: src/driverpage.cpp:623
 msgid ""
 "The operation was cancelled before it completed. Changes already made may be "
 "partially applied. Please check the log:\n"
@@ -389,6 +386,10 @@ msgid ""
 msgstr ""
 "操作在完成前被取消，已做的更改可能只应用了一部分。请检查日志：\n"
 "%1"
+
+#: src/driverpage.cpp:627
+msgid "Operation Cancelled"
+msgstr "操作已取消"
 
 #: src/driverscripts.cpp:46
 msgid "Started at"
@@ -559,15 +560,15 @@ msgstr "NVIDIA 驱动软件包已移除。"
 msgid "The open-source Nouveau driver will be used after reboot."
 msgstr "重启后将使用开源 Nouveau 驱动。"
 
-#: src/driverutils.cpp:91
+#: src/driverutils.cpp:107
 msgid "Hyper-V Graphics"
 msgstr "Hyper-V 显卡"
 
-#: src/driverutils.cpp:155
+#: src/driverutils.cpp:191
 msgid "NVIDIA Latest (open kernel module)"
 msgstr "NVIDIA 最新版（开源内核模块）"
 
-#: src/driverutils.cpp:231 src/systeminfo.cpp:144 src/systeminfo.cpp:167
+#: src/driverutils.cpp:273 src/systeminfo.cpp:144 src/systeminfo.cpp:167
 #: src/systeminfo.cpp:206
 msgid "Unknown"
 msgstr "未知"
@@ -617,19 +618,19 @@ msgstr "正在取消……"
 msgid "Cancellation requested by the user."
 msgstr "用户请求取消。"
 
-#: src/installlogdialog.cpp:296
+#: src/installlogdialog.cpp:312
 msgid "Process finished with exit code %1."
 msgstr "进程已结束，退出代码 %1。"
 
-#: src/installlogdialog.cpp:301
+#: src/installlogdialog.cpp:317
 msgid "Installation cancelled by the user."
 msgstr "安装已被用户取消。"
 
-#: src/installlogdialog.cpp:303
+#: src/installlogdialog.cpp:319
 msgid "Completed successfully."
 msgstr "已成功完成。"
 
-#: src/installlogdialog.cpp:304
+#: src/installlogdialog.cpp:320
 msgid "Failed. Please check the log."
 msgstr "失败，请检查日志。"
 

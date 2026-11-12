@@ -19,7 +19,9 @@
 #include <QStyle>
 #include <QVBoxLayout>
 
+#include <KGuiItem>
 #include <KLocalizedString>
+#include <KMessageBox>
 
 namespace
 {
@@ -62,19 +64,20 @@ QLabel *makeIconBadge(const QStringList &iconNames, const QString &fallbackText,
     return label;
 }
 
-// Qt translates the standard QMessageBox buttons through its own catalogues,
-// which are not installed on every system.  Provide the buttons ourselves so
-// confirmation dialogs are always localised.
 bool askConfirmation(QWidget *parent, QMessageBox::Icon icon, const QString &title,
                      const QString &text, bool defaultYes)
 {
-    QMessageBox box(icon, title, text, QMessageBox::NoButton, parent);
-    QPushButton *yesButton = box.addButton(i18n("Yes"), QMessageBox::YesRole);
-    QPushButton *noButton = box.addButton(i18n("No"), QMessageBox::NoRole);
-    box.setDefaultButton(defaultYes ? yesButton : noButton);
-    box.setEscapeButton(noButton);
-    box.exec();
-    return box.clickedButton() == yesButton;
+    KMessageBox::Options options = KMessageBox::Notify;
+    if (!defaultYes) {
+        options |= KMessageBox::Dangerous;
+    }
+
+    const KGuiItem yesItem(i18n("Yes"));
+    const KGuiItem noItem(i18n("No"));
+    const int result = icon == QMessageBox::Warning
+        ? KMessageBox::warningTwoActions(parent, text, title, yesItem, noItem, QString(), options)
+        : KMessageBox::questionTwoActions(parent, text, title, yesItem, noItem, QString(), options);
+    return result == KMessageBox::PrimaryAction;
 }
 
 QLabel *makeMuted(const QString &text)
@@ -309,10 +312,11 @@ void DriverPage::onInstallNvidia()
 
     const QString installedPackage = DriverUtils::installedNvidiaPackage();
     if (installedPackage == selectedPackage) {
-        QMessageBox::information(this, i18n("Already Installed"),
-                                 i18n("The driver package \"%1\" is already installed.\n"
-                                      "No further action is required.",
-                                      selectedPackage));
+        KMessageBox::information(this,
+                             i18n("The driver package \"%1\" is already installed.\n"
+                                  "No further action is required.",
+                                  selectedPackage),
+                             i18n("Already Installed"));
         return;
     }
 
@@ -365,10 +369,11 @@ void DriverPage::onInstallNvidia()
                       return;
                   }
                   if (!success) {
-                      QMessageBox::critical(dialog, i18n("Installation Failed"),
-                                            i18n("The installation did not complete. "
-                                                 "Please check the log:\n%1",
-                                                 logPath));
+                      KMessageBox::error(dialog,
+                               i18n("The installation did not complete. "
+                                    "Please check the log:\n%1",
+                                    logPath),
+                               i18n("Installation Failed"));
                       refreshStatus();
                       return;
                   }
@@ -387,7 +392,7 @@ void DriverPage::onInstallNvidia()
                                         "this driver branch is not available, so the nvidia-smi "
                                         "monitoring tool is missing.");
                   }
-                  QMessageBox::information(dialog, i18n("Installation Complete"), message);
+                  KMessageBox::information(dialog, message, i18n("Installation Complete"));
                   refreshStatus();
               });
 }
@@ -411,14 +416,16 @@ void DriverPage::onRevertNouveau()
                   if (cancelled) {
                       showCancelled(logPath, dialog);
                   } else if (success) {
-                      QMessageBox::information(dialog, i18n("Uninstall Complete"),
-                                               i18n("The NVIDIA driver packages were removed. "
-                                                    "Reboot to use the Nouveau driver."));
+                      KMessageBox::information(dialog,
+                                           i18n("The NVIDIA driver packages were removed. "
+                                                "Reboot to use the Nouveau driver."),
+                                           i18n("Uninstall Complete"));
                   } else {
-                      QMessageBox::critical(dialog, i18n("Operation Failed"),
-                                            i18n("The operation did not complete. "
-                                                 "Please check the log:\n%1",
-                                                 logPath));
+                      KMessageBox::error(dialog,
+                               i18n("The operation did not complete. "
+                                    "Please check the log:\n%1",
+                                    logPath),
+                               i18n("Operation Failed"));
                   }
                   refreshStatus();
               });
@@ -427,15 +434,17 @@ void DriverPage::onRevertNouveau()
 void DriverPage::onMokClicked()
 {
     if (!DriverUtils::hasSecureBoot()) {
-        QMessageBox::critical(this, i18n("Secure Boot MOK"),
-                              i18n("Secure Boot on your computer firmware is disabled "
-                                   "or the firmware does not support Secure Boot."));
+        KMessageBox::error(this,
+                       i18n("Secure Boot on your computer firmware is disabled "
+                            "or the firmware does not support Secure Boot."),
+                       i18n("Secure Boot MOK"));
         return;
     }
 
     if (DriverUtils::hasMokCertificate()) {
-        QMessageBox::information(this, i18n("Secure Boot MOK"),
-                                 i18n("You have already registered the Secure Boot MOK."));
+        KMessageBox::information(this,
+                             i18n("You have already registered the Secure Boot MOK."),
+                             i18n("Secure Boot MOK"));
         return;
     }
 
@@ -464,10 +473,11 @@ void DriverPage::onMokClicked()
                       return;
                   }
                   if (!success) {
-                      QMessageBox::critical(dialog, i18n("Operation Failed"),
-                                            i18n("The operation did not complete. "
-                                                 "Please check the log:\n%1",
-                                                 logPath));
+                      KMessageBox::error(dialog,
+                               i18n("The operation did not complete. "
+                                    "Please check the log:\n%1",
+                                    logPath),
+                               i18n("Operation Failed"));
                       return;
                   }
                   registerMok();
@@ -491,10 +501,11 @@ void DriverPage::registerMok()
                   } else if (success) {
                       showMokInstructions(password, dialog);
                   } else {
-                      QMessageBox::critical(dialog, i18n("Operation Failed"),
-                                            i18n("The operation did not complete. "
-                                                 "Please check the log:\n%1",
-                                                 logPath));
+                      KMessageBox::error(dialog,
+                               i18n("The operation did not complete. "
+                                    "Please check the log:\n%1",
+                                    logPath),
+                               i18n("Operation Failed"));
                   }
               },
               QString::fromLatin1(kMokHelperPath));
@@ -542,10 +553,11 @@ void DriverPage::onPackageAction(const QString &package, const QString &displayN
                       return;
                   }
                   if (!success) {
-                      QMessageBox::critical(dialog, i18n("Operation Failed"),
-                                            i18n("The operation did not complete. "
-                                                 "Please check the log:\n%1",
-                                                 logPath));
+                      KMessageBox::error(dialog,
+                               i18n("The operation did not complete. "
+                                    "Please check the log:\n%1",
+                                    logPath),
+                               i18n("Operation Failed"));
                       refreshStatus();
                       return;
                   }
@@ -553,15 +565,17 @@ void DriverPage::onPackageAction(const QString &package, const QString &displayN
                       showMokInstructions(mokPassword, dialog);
                   }
                   if (install) {
-                      QMessageBox::information(dialog, i18n("Installation Complete"),
-                                               i18n("%1 was installed successfully. "
-                                                    "Open System Monitor and wait for the cc1 processes "
-                                                    "and the subsequent dnf5 process to finish, "
-                                                    "then reboot to start using it.",
-                                                    displayName));
+                      KMessageBox::information(dialog,
+                                           i18n("%1 was installed successfully. "
+                                                "Open System Monitor and wait for the cc1 processes "
+                                                "and the subsequent dnf5 process to finish, "
+                                                "then reboot to start using it.",
+                                                displayName),
+                                           i18n("Installation Complete"));
                   } else {
-                      QMessageBox::information(dialog, i18n("Uninstall Complete"),
-                                               i18n("%1 was removed successfully.", displayName));
+                      KMessageBox::information(dialog,
+                                           i18n("%1 was removed successfully.", displayName),
+                                           i18n("Uninstall Complete"));
                   }
                   refreshStatus();
               });
@@ -584,9 +598,10 @@ QString DriverPage::promptMokPassword()
         i18n("Re-enter the password to confirm:"),
         QLineEdit::Password, QString(), &ok);
     if (!ok || password != confirmation) {
-        QMessageBox::warning(this, i18n("Password Mismatch"),
-                             i18n("The passwords do not match. "
-                                  "MOK configuration was skipped."));
+        KMessageBox::error(this,
+                       i18n("The passwords do not match. "
+                            "MOK configuration was skipped."),
+                       i18n("Password Mismatch"));
         return {};
     }
     return password;
@@ -594,20 +609,22 @@ QString DriverPage::promptMokPassword()
 
 void DriverPage::showMokInstructions(const QString &password, QWidget *parent)
 {
-    QMessageBox::information(
-        parent ? parent : this, i18n("MOK Configuration Complete"),
+    KMessageBox::information(
+        parent ? parent : this,
         i18n("After rebooting, the MOK management screen will appear.\n"
              "Choose \"Enroll MOK\" and enter this password:\n\n%1",
-             password));
+             password),
+        i18n("MOK Configuration Complete"));
 }
 
 void DriverPage::showCancelled(const QString &logPath, QWidget *parent)
 {
-    QMessageBox::information(parent ? parent : this, i18n("Operation Cancelled"),
+    KMessageBox::information(parent ? parent : this,
                              i18n("The operation was cancelled before it completed. "
                                   "Changes already made may be partially applied. "
                                   "Please check the log:\n%1",
-                                  logPath));
+                                  logPath),
+                             i18n("Operation Cancelled"));
 }
 
 void DriverPage::runScript(const QString &title, const QString &script,

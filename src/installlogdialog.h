@@ -40,6 +40,9 @@ private:
     void appendText(const QString &text);
     void setRunning(bool running);
     void cancel();
+    // The privileged helper runs as root, so this unprivileged process cannot
+    // signal it.  Create the marker file the helper watches instead.
+    void requestHelperCancellation();
     void onReadyRead();
     void onProcessFinished(int exitCode, QProcess::ExitStatus status);
     // Report failure for startup errors that never reach QProcess, so callers

@@ -20,6 +20,22 @@ QString runAndRead(const QString &program, const QStringList &arguments, int tim
     }
     return QString::fromUtf8(process.readAllStandardOutput());
 }
+
+// rpm prints one line per matching package.  When several packages (for
+// example the multilib x86_64 and i686 builds) are installed, the raw output
+// contains the same version more than once.  Return a single version instead
+// of concatenating every match.
+QString singleVersion(const QString &output)
+{
+    const QStringList lines = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+    for (const QString &line : lines) {
+        const QString version = line.trimmed();
+        if (!version.isEmpty()) {
+            return version;
+        }
+    }
+    return {};
+}
 }
 
 QString DriverUtils::logFilePath()
@@ -107,7 +123,10 @@ QStringList DriverUtils::gpuNames()
 
         const int separator = line.indexOf(QLatin1String(": "));
         const QString description = separator >= 0 ? line.mid(separator + 2).trimmed() : line.trimmed();
-        if (!description.isEmpty() && !names.contains(description)) {
+        // Keep one entry per physical GPU.  Identical models (for example two
+        // cards of the same type) must still be counted as separate GPUs so the
+        // UI can offer the list of installed graphics cards.
+        if (!description.isEmpty()) {
             names.append(description);
         }
     }
@@ -116,10 +135,17 @@ QStringList DriverUtils::gpuNames()
 
 QString DriverUtils::installedNvidiaPackage()
 {
+    // Only look up the NVIDIA package names instead of scanning the whole RPM
+    // database.  `rpm -qa` has to format every installed header and can block
+    // for several seconds, which froze the log window right after a denied
+    // polkit prompt.  Name patterns are resolved through the RPM name index
+    // and return almost instantly.
     const QString output = runAndRead(QStringLiteral("rpm"),
-                                      {QStringLiteral("-qa"), QStringLiteral("--queryformat"),
-                                       QStringLiteral("%{NAME}\n")},
-                                      5000);
+                                      {QStringLiteral("-q"), QStringLiteral("--queryformat"),
+                                       QStringLiteral("%{NAME}\n"),
+                                       QStringLiteral("akmod-nvidia*"),
+                                       QStringLiteral("kmod-nvidia*")},
+                                      3000);
     const QStringList packages = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
     for (const QString &package : packages) {
         if (package.startsWith(QLatin1String("akmod-nvidia")) && !package.contains(QLatin1String("runtime"))) {
@@ -141,22 +167,22 @@ QString DriverUtils::installedNvidiaVersion()
         return {};
     }
 
-    const QString version = runAndRead(QStringLiteral("rpm"),
-                                       {QStringLiteral("-q"), QStringLiteral("--queryformat"),
-                                        QStringLiteral("%{VERSION}"), package},
-                                       5000)
-                                .trimmed();
+    const QString version = singleVersion(
+        runAndRead(QStringLiteral("rpm"),
+                   {QStringLiteral("-q"), QStringLiteral("--queryformat"),
+                    QStringLiteral("%{VERSION}\n"), package},
+                   5000));
     return version.isEmpty() ? package : version;
 }
 
 QString DriverUtils::mesaDriverVersion()
 {
     // %{VERSION} already excludes the release and the .fcXX distribution tag.
-    return runAndRead(QStringLiteral("rpm"),
-                      {QStringLiteral("-q"), QStringLiteral("--queryformat"),
-                       QStringLiteral("%{VERSION}"), QStringLiteral("mesa-dri-drivers")},
-                      5000)
-        .trimmed();
+    return singleVersion(
+        runAndRead(QStringLiteral("rpm"),
+                   {QStringLiteral("-q"), QStringLiteral("--queryformat"),
+                    QStringLiteral("%{VERSION}\n"), QStringLiteral("mesa-dri-drivers")},
+                   5000));
 }
 
 QList<QPair<QString, QString>> DriverUtils::availableNvidiaDrivers()
@@ -186,12 +212,18 @@ QString DriverUtils::cudaPackageFor(const QString &akmodPackage)
 
 bool DriverUtils::hasSecureBoot()
 {
-    const QString mokutil = QStandardPaths::findExecutable(QStringLiteral("mokutil"));
-    if (mokutil.isEmpty()) {
-        return false;
-    }
-    const QString output = runAndRead(mokutil, {QStringLiteral("--sb-state")}, 3000);
-    return output.contains(QLatin1String("SecureBoot enabled"), Qt::CaseInsensitive);
+    // The Secure Boot state cannot change while the application is running, so
+    // query mokutil only once.  This keeps refresh operations off the costly
+    // (and potentially blocking) mokutil call path.
+    static const bool secureBoot = [] {
+        const QString mokutil = QStandardPaths::findExecutable(QStringLiteral("mokutil"));
+        if (mokutil.isEmpty()) {
+            return false;
+        }
+        const QString output = runAndRead(mokutil, {QStringLiteral("--sb-state")}, 3000);
+        return output.contains(QLatin1String("SecureBoot enabled"), Qt::CaseInsensitive);
+    }();
+    return secureBoot;
 }
 
 bool DriverUtils::hasMokCertificate()

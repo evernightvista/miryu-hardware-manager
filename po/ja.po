@@ -6,151 +6,148 @@ msgid ""
 msgstr ""
 "Project-Id-Version: miryu-hardware-manager 45.0.0\n"
 "Report-Msgid-Bugs-To: contact@miryu.gaming\n"
-"POT-Creation-Date: 2026-11-11 14:27+0800\n"
-"PO-Revision-Date: 2026-11-10 20:00+0800\n"
+"POT-Creation-Date: 2026-11-12 09:53+0800\n"
+"PO-Revision-Date: 2026-11-12 09:34+0800\n"
 "Last-Translator: Miryu <contact@miryu.gaming>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Miryu Hardware Manager\n"
 
-#: src/basicinfopage.cpp:76
+#: src/basicinfopage.cpp:77
 msgid "Processor"
 msgstr "プロセッサー"
 
-#: src/basicinfopage.cpp:79
+#: src/basicinfopage.cpp:80
 msgid "Memory"
 msgstr "メモリー"
 
-#: src/basicinfopage.cpp:82
+#: src/basicinfopage.cpp:83
 msgid "Storage"
 msgstr "ストレージ"
 
-#: src/basicinfopage.cpp:85
+#: src/basicinfopage.cpp:86
 msgid "Graphics Card"
 msgstr "グラフィックスカード"
 
-#: src/basicinfopage.cpp:95
+#: src/basicinfopage.cpp:100
 msgid "Show all graphics cards"
 msgstr "すべてのグラフィックスカードを表示"
 
-#: src/basicinfopage.cpp:173
+#: src/basicinfopage.cpp:197
 msgid "Device: %1"
 msgstr "デバイス: %1"
 
-#: src/basicinfopage.cpp:177
+#: src/basicinfopage.cpp:201
 msgid "%1 cores, %2 threads"
 msgstr "%1 コア / %2 スレッド"
 
-#: src/basicinfopage.cpp:179 src/basicinfopage.cpp:189
-#: src/basicinfopage.cpp:192 src/systeminfo.cpp:288 src/systeminfo.cpp:308
-#: src/systeminfo.cpp:311 src/systeminfo.cpp:314
+#: src/basicinfopage.cpp:203 src/basicinfopage.cpp:213
+#: src/basicinfopage.cpp:216 src/systeminfo.cpp:288 src/systeminfo.cpp:312
+#: src/systeminfo.cpp:316 src/systeminfo.cpp:319
 msgid "Not available"
 msgstr "利用不可"
 
-#: src/basicinfopage.cpp:184 src/basicinfopage.cpp:200
+#: src/basicinfopage.cpp:208 src/basicinfopage.cpp:224
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: src/basicinfopage.cpp:186
+#: src/basicinfopage.cpp:210
 msgid "%1 GB usable, %2 GB available"
 msgstr "%1 GB 使用可能、%2 GB 空き"
 
-#: src/basicinfopage.cpp:201
+#: src/basicinfopage.cpp:225
 msgid "%1 GB available"
 msgstr "%1 GB 使用可能"
 
-#: src/basicinfopage.cpp:204
+#: src/basicinfopage.cpp:228
 msgid "Driver version: %1"
 msgstr "ドライバーのバージョン: %1"
 
-#: src/driverpage.cpp:72
+#: src/driverpage.cpp:75
 msgid "Yes"
 msgstr "はい"
 
-#: src/driverpage.cpp:73
+#: src/driverpage.cpp:76
 msgid "No"
 msgstr "いいえ"
 
-#: src/driverpage.cpp:91
+#: src/driverpage.cpp:94
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/driverpage.cpp:91 src/systeminfo.cpp:305
+#: src/driverpage.cpp:94 src/systeminfo.cpp:305
 msgid "Not installed"
 msgstr "未インストール"
 
-#: src/driverpage.cpp:119
+#: src/driverpage.cpp:122
 msgid "Logitech TrueForce Driver"
 msgstr "Logitech TrueForce ドライバー"
 
-#: src/driverpage.cpp:128
+#: src/driverpage.cpp:131
 msgid "Razer Driver"
 msgstr "Razer ドライバー"
 
-#: src/driverpage.cpp:142
+#: src/driverpage.cpp:145
 msgid "Register Secure Boot MOK"
 msgstr "セキュアブート MOK を登録"
 
-#: src/driverpage.cpp:152 src/driverpage.cpp:155
+#: src/driverpage.cpp:155 src/driverpage.cpp:158
 msgid "Logitech TrueForce driver"
 msgstr "Logitech TrueForce ドライバー"
 
-#: src/driverpage.cpp:158 src/driverpage.cpp:161
+#: src/driverpage.cpp:161 src/driverpage.cpp:164
 msgid "Razer driver"
 msgstr "Razer ドライバー"
 
-#: src/driverpage.cpp:182
+#: src/driverpage.cpp:185
 msgid "NVIDIA Drivers"
 msgstr "NVIDIA ドライバー"
 
-#: src/driverpage.cpp:185
+#: src/driverpage.cpp:188
 msgid "Current driver: detecting..."
 msgstr "現在のドライバー: 検出中..."
 
-#: src/driverpage.cpp:203
+#: src/driverpage.cpp:206
 msgid "Install / Switch"
 msgstr "インストール / 切り替え"
 
-#: src/driverpage.cpp:206 src/driverpage.cpp:398
+#: src/driverpage.cpp:209 src/driverpage.cpp:403
 msgid "Revert to Nouveau"
 msgstr "Nouveau に戻す"
 
-#: src/driverpage.cpp:254
+#: src/driverpage.cpp:257
 msgid "Install"
 msgstr "インストール"
 
-#: src/driverpage.cpp:255
+#: src/driverpage.cpp:258
 msgid "Uninstall"
 msgstr "アンインストール"
 
-#: src/driverpage.cpp:281
+#: src/driverpage.cpp:284
 msgid "Current driver: not installed"
 msgstr "現在のドライバー: 未インストール"
 
-#: src/driverpage.cpp:282
+#: src/driverpage.cpp:285
 msgid "Current driver: %1"
 msgstr "現在のドライバー: %1"
 
-#: src/driverpage.cpp:285
+#: src/driverpage.cpp:288
 msgid "Secure Boot: enabled"
 msgstr "セキュアブート: 有効"
 
-#: src/driverpage.cpp:286
+#: src/driverpage.cpp:289
 msgid "Secure Boot: disabled"
 msgstr "セキュアブート: 無効"
 
-#: src/driverpage.cpp:287
+#: src/driverpage.cpp:290
 msgid "Display server: %1"
 msgstr "表示サーバー: %1"
 
-#: src/driverpage.cpp:312
-msgid "Already Installed"
-msgstr "すでにインストール済み"
-
-#: src/driverpage.cpp:313
+#: src/driverpage.cpp:316
 msgid ""
 "The driver package \"%1\" is already installed.\n"
 "No further action is required."
@@ -158,11 +155,15 @@ msgstr ""
 "ドライバーパッケージ「%1」はすでにインストールされています。\n"
 "追加の操作は必要ありません。"
 
-#: src/driverpage.cpp:322
+#: src/driverpage.cpp:319
+msgid "Already Installed"
+msgstr "すでにインストール済み"
+
+#: src/driverpage.cpp:326
 msgid "Different Driver Installed"
 msgstr "別のドライバーがインストール済み"
 
-#: src/driverpage.cpp:323
+#: src/driverpage.cpp:327
 msgid ""
 "The package \"%1\" is currently installed.\n"
 "Installing \"%2\" will replace it.\n"
@@ -174,11 +175,11 @@ msgstr ""
 "\n"
 "続行しますか？"
 
-#: src/driverpage.cpp:337 src/driverpage.cpp:509
+#: src/driverpage.cpp:341 src/driverpage.cpp:520
 msgid "Secure Boot Detected"
 msgstr "セキュアブートを検出"
 
-#: src/driverpage.cpp:338
+#: src/driverpage.cpp:342
 msgid ""
 "Secure Boot is enabled. The NVIDIA kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
@@ -186,15 +187,11 @@ msgstr ""
 "セキュアブートが有効です。NVIDIA カーネルモジュールに署名が必要です。\n"
 "今すぐ Machine Owner Key (MOK) を設定しますか？"
 
-#: src/driverpage.cpp:360
+#: src/driverpage.cpp:364
 msgid "NVIDIA Driver Installation Log"
 msgstr "NVIDIA ドライバーのインストールログ"
 
-#: src/driverpage.cpp:368
-msgid "Installation Failed"
-msgstr "インストールに失敗しました"
-
-#: src/driverpage.cpp:369
+#: src/driverpage.cpp:373
 msgid ""
 "The installation did not complete. Please check the log:\n"
 "%1"
@@ -202,7 +199,11 @@ msgstr ""
 "インストールが完了しませんでした。ログを確認してください:\n"
 "%1"
 
-#: src/driverpage.cpp:378
+#: src/driverpage.cpp:376
+msgid "Installation Failed"
+msgstr "インストールに失敗しました"
+
+#: src/driverpage.cpp:383
 msgid ""
 "The NVIDIA driver was installed successfully. Open System Monitor and wait "
 "for the cc1 processes and the subsequent dnf5 process to finish, then reboot "
@@ -216,7 +217,7 @@ msgstr ""
 "\n"
 "ログの保存先: %1"
 
-#: src/driverpage.cpp:386
+#: src/driverpage.cpp:391
 msgid ""
 "nvidia-smi is not installed. The CUDA package for this driver branch is not "
 "available, so the nvidia-smi monitoring tool is missing."
@@ -224,11 +225,11 @@ msgstr ""
 "nvidia-smi がインストールされていません。このドライバーブランチ用の CUDA パッ"
 "ケージが提供されていないため、監視ツール nvidia-smi がありません。"
 
-#: src/driverpage.cpp:390 src/driverpage.cpp:556
+#: src/driverpage.cpp:395 src/driverpage.cpp:574
 msgid "Installation Complete"
 msgstr "インストール完了"
 
-#: src/driverpage.cpp:399
+#: src/driverpage.cpp:404
 msgid ""
 "This will remove the NVIDIA driver packages and switch back to the Nouveau "
 "driver.\n"
@@ -239,28 +240,23 @@ msgstr ""
 "\n"
 "続行しますか？"
 
-#: src/driverpage.cpp:407
+#: src/driverpage.cpp:412
 msgid "Nouveau Restore Log"
 msgstr "Nouveau 復元ログ"
 
-#: src/driverpage.cpp:414 src/driverpage.cpp:563
-msgid "Uninstall Complete"
-msgstr "アンインストール完了"
-
-#: src/driverpage.cpp:415
+#: src/driverpage.cpp:420
 msgid ""
 "The NVIDIA driver packages were removed. Reboot to use the Nouveau driver."
 msgstr ""
 "NVIDIA ドライバーパッケージを削除しました。Nouveau ドライバーを使用するには再"
 "起動してください。"
 
-#: src/driverpage.cpp:418 src/driverpage.cpp:467 src/driverpage.cpp:494
-#: src/driverpage.cpp:545
-msgid "Operation Failed"
-msgstr "操作に失敗しました"
+#: src/driverpage.cpp:422 src/driverpage.cpp:578
+msgid "Uninstall Complete"
+msgstr "アンインストール完了"
 
-#: src/driverpage.cpp:419 src/driverpage.cpp:468 src/driverpage.cpp:495
-#: src/driverpage.cpp:546
+#: src/driverpage.cpp:425 src/driverpage.cpp:477 src/driverpage.cpp:505
+#: src/driverpage.cpp:557
 msgid ""
 "The operation did not complete. Please check the log:\n"
 "%1"
@@ -268,65 +264,70 @@ msgstr ""
 "操作が完了しませんでした。ログを確認してください:\n"
 "%1"
 
-#: src/driverpage.cpp:430 src/driverpage.cpp:437
-msgid "Secure Boot MOK"
-msgstr "セキュアブート MOK"
+#: src/driverpage.cpp:428 src/driverpage.cpp:480 src/driverpage.cpp:508
+#: src/driverpage.cpp:560
+msgid "Operation Failed"
+msgstr "操作に失敗しました"
 
-#: src/driverpage.cpp:431
+#: src/driverpage.cpp:438
 msgid ""
 "Secure Boot on your computer firmware is disabled or the firmware does not "
 "support Secure Boot."
 msgstr ""
-"お使いのコンピューターのファームウェアで Secure Boot が無効になっているか、"
-"ファームウェアが Secure Boot に対応していません。"
+"お使いのコンピューターのファームウェアでセキュアブートが無効になっているか、"
+"ファームウェアがセキュアブートに対応していません。"
 
-#: src/driverpage.cpp:438
+#: src/driverpage.cpp:440 src/driverpage.cpp:447
+msgid "Secure Boot MOK"
+msgstr "セキュアブート MOK"
+
+#: src/driverpage.cpp:446
 msgid "You have already registered the Secure Boot MOK."
 msgstr "セキュアブートの MOK は既に登録されています。"
 
-#: src/driverpage.cpp:449
+#: src/driverpage.cpp:458
 msgid "Install akmods-evernight"
 msgstr "akmods-evernight をインストール"
 
-#: src/driverpage.cpp:450
+#: src/driverpage.cpp:459
 msgid ""
 "akmods-evernight is required to generate and enroll the Secure Boot MOK.\n"
 "It is not installed yet. Install it first and then continue with MOK "
 "registration?"
 msgstr ""
-"Secure Boot の MOK を生成して登録するには akmods-evernight が必要です。\n"
+"セキュアブートの MOK を生成して登録するには akmods-evernight が必要です。\n"
 "まだインストールされていません。先にインストールしてから MOK の登録を続行しま"
 "すか？"
 
-#: src/driverpage.cpp:458 src/driverpage.cpp:530
+#: src/driverpage.cpp:467 src/driverpage.cpp:541
 msgid "%1 - Installation Log"
 msgstr "%1 - インストールログ"
 
-#: src/driverpage.cpp:485
+#: src/driverpage.cpp:495
 msgid "MOK Configuration Log"
 msgstr "MOK 設定ログ"
 
-#: src/driverpage.cpp:510
+#: src/driverpage.cpp:521
 msgid ""
 "Secure Boot is enabled. The %1 kernel module must be signed.\n"
 "Configure a Machine Owner Key (MOK) now?"
 msgstr ""
 "セキュアブートが有効です。%1 のカーネルモジュールに署名が必要です。\n"
-"今すぐ Machine Owner Key (MOK) を設定しますか?"
+"今すぐ Machine Owner Key (MOK) を設定しますか？"
 
-#: src/driverpage.cpp:521
+#: src/driverpage.cpp:532
 msgid "Uninstall Driver"
 msgstr "ドライバーのアンインストール"
 
-#: src/driverpage.cpp:522
+#: src/driverpage.cpp:533
 msgid "Remove the %1 from this system?"
 msgstr "このシステムから%1を削除しますか？"
 
-#: src/driverpage.cpp:531
+#: src/driverpage.cpp:542
 msgid "%1 - Removal Log"
 msgstr "%1 - 削除ログ"
 
-#: src/driverpage.cpp:557
+#: src/driverpage.cpp:569
 msgid ""
 "%1 was installed successfully. Open System Monitor and wait for the cc1 "
 "processes and the subsequent dnf5 process to finish, then reboot to start "
@@ -335,15 +336,15 @@ msgstr ""
 "%1 は正常にインストールされました。システムモニターを開き、cc1 プロセスとその"
 "後の dnf5 プロセスの完了を待ってから再起動すると、使用を開始できます。"
 
-#: src/driverpage.cpp:564
+#: src/driverpage.cpp:577
 msgid "%1 was removed successfully."
 msgstr "%1 は正常に削除されました。"
 
-#: src/driverpage.cpp:574
+#: src/driverpage.cpp:588
 msgid "Set MOK Password"
 msgstr "MOK パスワードの設定"
 
-#: src/driverpage.cpp:575
+#: src/driverpage.cpp:589
 msgid ""
 "Enter a password for the Machine Owner Key (MOK).\n"
 "You will need to enter it after reboot:"
@@ -351,27 +352,23 @@ msgstr ""
 "Machine Owner Key (MOK) のパスワードを入力してください。\n"
 "再起動後に必要になります:"
 
-#: src/driverpage.cpp:583
+#: src/driverpage.cpp:597
 msgid "Confirm MOK Password"
 msgstr "MOK パスワードの確認"
 
-#: src/driverpage.cpp:584
+#: src/driverpage.cpp:598
 msgid "Re-enter the password to confirm:"
 msgstr "確認のためパスワードを再入力してください:"
 
-#: src/driverpage.cpp:587
-msgid "Password Mismatch"
-msgstr "パスワードが一致しません"
-
-#: src/driverpage.cpp:588
+#: src/driverpage.cpp:602
 msgid "The passwords do not match. MOK configuration was skipped."
 msgstr "パスワードが一致しません。MOK の設定をスキップしました。"
 
-#: src/driverpage.cpp:598
-msgid "MOK Configuration Complete"
-msgstr "MOK 設定完了"
+#: src/driverpage.cpp:604
+msgid "Password Mismatch"
+msgstr "パスワードが一致しません"
 
-#: src/driverpage.cpp:599
+#: src/driverpage.cpp:614
 msgid ""
 "After rebooting, the MOK management screen will appear.\n"
 "Choose \"Enroll MOK\" and enter this password:\n"
@@ -383,11 +380,11 @@ msgstr ""
 "\n"
 "%1"
 
-#: src/driverpage.cpp:606
-msgid "Operation Cancelled"
-msgstr "操作はキャンセルされました"
+#: src/driverpage.cpp:617
+msgid "MOK Configuration Complete"
+msgstr "MOK 設定完了"
 
-#: src/driverpage.cpp:607
+#: src/driverpage.cpp:623
 msgid ""
 "The operation was cancelled before it completed. Changes already made may be "
 "partially applied. Please check the log:\n"
@@ -396,6 +393,10 @@ msgstr ""
 "操作は完了前にキャンセルされました。既に行われた変更は一部のみ適用されている"
 "可能性があります。ログを確認してください:\n"
 "%1"
+
+#: src/driverpage.cpp:627
+msgid "Operation Cancelled"
+msgstr "操作はキャンセルされました"
 
 #: src/driverscripts.cpp:46
 msgid "Started at"
@@ -507,7 +508,9 @@ msgstr "NVIDIA ドライバーパッケージをインストールしていま�
 msgid ""
 "The CUDA package \"%1\" could not be installed; retrying with the driver "
 "alone..."
-msgstr "CUDA パッケージ「%1」をインストールできませんでした。ドライバーのみで再試行します…"
+msgstr ""
+"CUDA パッケージ「%1」をインストールできませんでした。ドライバーのみで再試行し"
+"ます…"
 
 #: src/driverscripts.cpp:288
 msgid "Verifying installation..."
@@ -570,15 +573,15 @@ msgstr "NVIDIA ドライバーパッケージを削除しました。"
 msgid "The open-source Nouveau driver will be used after reboot."
 msgstr "再起動後はオープンソースの Nouveau ドライバーが使用されます。"
 
-#: src/driverutils.cpp:91
+#: src/driverutils.cpp:107
 msgid "Hyper-V Graphics"
 msgstr "Hyper-V グラフィックス"
 
-#: src/driverutils.cpp:155
+#: src/driverutils.cpp:191
 msgid "NVIDIA Latest (open kernel module)"
 msgstr "NVIDIA 最新 (オープンカーネルモジュール)"
 
-#: src/driverutils.cpp:231 src/systeminfo.cpp:144 src/systeminfo.cpp:167
+#: src/driverutils.cpp:273 src/systeminfo.cpp:144 src/systeminfo.cpp:167
 #: src/systeminfo.cpp:206
 msgid "Unknown"
 msgstr "不明"
@@ -628,19 +631,19 @@ msgstr "キャンセルしています…"
 msgid "Cancellation requested by the user."
 msgstr "ユーザーによるキャンセルが要求されました。"
 
-#: src/installlogdialog.cpp:296
+#: src/installlogdialog.cpp:312
 msgid "Process finished with exit code %1."
 msgstr "プロセスが終了コード %1 で終了しました。"
 
-#: src/installlogdialog.cpp:301
+#: src/installlogdialog.cpp:317
 msgid "Installation cancelled by the user."
 msgstr "インストールはユーザーによってキャンセルされました。"
 
-#: src/installlogdialog.cpp:303
+#: src/installlogdialog.cpp:319
 msgid "Completed successfully."
 msgstr "正常に完了しました。"
 
-#: src/installlogdialog.cpp:304
+#: src/installlogdialog.cpp:320
 msgid "Failed. Please check the log."
 msgstr "失敗しました。ログを確認してください。"
 

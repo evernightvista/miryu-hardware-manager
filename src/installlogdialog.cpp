@@ -9,7 +9,6 @@
 #include <QPlainTextEdit>
 #include <QProgressBar>
 #include <QPushButton>
-#include <QStandardPaths>
 #include <QTextCursor>
 #include <QTemporaryDir>
 #include <QTimer>
@@ -86,6 +85,7 @@ InstallLogDialog::InstallLogDialog(const QString &title, QWidget *parent)
 InstallLogDialog::~InstallLogDialog()
 {
     if (m_process && m_process->state() != QProcess::NotRunning) {
+        requestHelperCancellation();
         signalProcessTree(m_process->processId(), SIGKILL);
         m_process->kill();
         m_process->waitForFinished(2000);
@@ -241,6 +241,11 @@ void InstallLogDialog::cancel()
     appendText(QLatin1Char('\n')
                + i18n("Cancellation requested by the user.") + QLatin1Char('\n'));
 
+    // pkexec and everything below it run as root, so signals from this
+    // unprivileged process are rejected; the helper performs the real
+    // cancellation when it sees the marker file.
+    requestHelperCancellation();
+
     const qint64 pid = m_process->processId();
     if (pid <= 0) {
         m_process->kill();
@@ -258,6 +263,17 @@ void InstallLogDialog::cancel()
             signalProcessTree(pid, SIGKILL);
         }
     });
+}
+
+void InstallLogDialog::requestHelperCancellation()
+{
+    if (!m_tempDir) {
+        return;
+    }
+    QFile marker(m_tempDir->path() + QStringLiteral("/cancel"));
+    if (marker.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        marker.write("cancel\n");
+    }
 }
 
 void InstallLogDialog::failEarly()

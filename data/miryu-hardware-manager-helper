@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 
 SCRIPT_PATH="${1:-}"
 
@@ -24,4 +24,37 @@ if [ ! -f "$RESOLVED_PATH" ]; then
   exit 127
 fi
 
-exec /usr/bin/bash "$RESOLVED_PATH"
+# This helper runs as root, while the GUI runs unprivileged and therefore cannot
+# signal it or its children to cancel.  The GUI asks for cancellation by
+# creating the marker file in the temporary directory instead, and this
+# supervisor stops the whole process group once it appears.
+CANCEL_FILE="$(dirname -- "$RESOLVED_PATH")/cancel"
+
+if [ -e "$CANCEL_FILE" ]; then
+  echo "Cancellation requested before the command was started." >&2
+  exit 130
+fi
+
+/usr/bin/bash "$RESOLVED_PATH" &
+command_pid=$!
+
+# The payload must keep the default handlers so the signals sent below stop it
+# and the package manager, therefore only this supervisor ignores them.
+trap '' TERM INT HUP
+
+while kill -0 "$command_pid" 2>/dev/null; do
+  if [ -e "$CANCEL_FILE" ]; then
+    echo "Cancellation requested by the user; stopping the running command." >&2
+    kill -TERM 0 2>/dev/null || true
+    for _ in 1 2 3 4 5 6 7 8 9 10; do
+      kill -0 "$command_pid" 2>/dev/null || break
+      sleep 0.2
+    done
+    kill -KILL 0 2>/dev/null || true
+    exit 130
+  fi
+  sleep 0.2
+done
+
+wait "$command_pid"
+exit $?

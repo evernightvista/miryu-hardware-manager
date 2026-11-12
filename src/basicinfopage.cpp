@@ -2,6 +2,7 @@
 
 #include "systeminfo.h"
 
+#include <QEvent>
 #include <QFrame>
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -86,25 +87,30 @@ void BasicInfoPage::buildUi()
                                  {QStringLiteral("video-display"), QStringLiteral("computer")},
                                  true, &m_gpuValue, &m_gpuDetail);
 
-    auto *gpuCardLayout = qobject_cast<QVBoxLayout *>(gpuCard->layout());
-    auto *moreRow = new QHBoxLayout;
-    moreRow->addStretch();
+    // The button is an overlay pinned to the bottom-right corner of the card.
+    // Keeping it out of the vertical layout guarantees it stays visible even
+    // when a long GPU name fills the card.
+    m_gpuCard = gpuCard;
+    m_gpuDetail->setContentsMargins(0, 0, 28, 0);
     m_gpuMoreButton = new QToolButton(gpuCard);
     m_gpuMoreButton->setText(QStringLiteral("…"));
     m_gpuMoreButton->setAutoRaise(true);
+    m_gpuMoreButton->setCursor(Qt::PointingHandCursor);
+    m_gpuMoreButton->setFixedSize(24, 24);
     m_gpuMoreButton->setToolTip(i18n("Show all graphics cards"));
-    m_gpuMoreButton->setStyleSheet(
-        QStringLiteral("QToolButton { border: none; padding: 0 4px; font-size: 16px; font-weight: 700; }"));
+    m_gpuMoreButton->setStyleSheet(QStringLiteral(
+        "QToolButton { border: none; border-radius: 6px; padding: 0;"
+        " font-size: 18px; font-weight: 700; color: palette(text); }"
+        "QToolButton:hover { background-color: palette(midlight); }"));
     m_gpuMoreButton->hide();
-    moreRow->addWidget(m_gpuMoreButton);
-    gpuCardLayout->addLayout(moreRow);
+    gpuCard->installEventFilter(this);
 
     connect(m_gpuMoreButton, &QToolButton::clicked, this, [this] {
         QMenu menu(this);
         for (const QString &name : m_gpuNames) {
             menu.addAction(name);
         }
-        menu.exec(m_gpuMoreButton->mapToGlobal(QPoint(0, m_gpuMoreButton->height())));
+        menu.exec(m_gpuMoreButton->mapToGlobal(QPoint(0, -menu.sizeHint().height())));
     });
 
     grid->addWidget(cpuCard, 0, 0);
@@ -165,6 +171,24 @@ QFrame *BasicInfoPage::createCard(const QString &title, const QStringList &iconN
     return card;
 }
 
+void BasicInfoPage::positionGpuMoreButton()
+{
+    if (!m_gpuCard || !m_gpuMoreButton) {
+        return;
+    }
+    m_gpuMoreButton->move(m_gpuCard->width() - m_gpuMoreButton->width() - 14,
+                          m_gpuCard->height() - m_gpuMoreButton->height() - 12);
+    m_gpuMoreButton->raise();
+}
+
+bool BasicInfoPage::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched == m_gpuCard && event->type() == QEvent::Resize) {
+        positionGpuMoreButton();
+    }
+    return QWidget::eventFilter(watched, event);
+}
+
 void BasicInfoPage::refresh()
 {
     const SystemInfoData data = SystemInfo::collect();
@@ -205,4 +229,5 @@ void BasicInfoPage::refresh()
 
     m_gpuNames = data.gpuNames;
     m_gpuMoreButton->setVisible(m_gpuNames.size() > 1);
+    positionGpuMoreButton();
 }

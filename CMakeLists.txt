@@ -14,7 +14,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
-find_package(KF6 REQUIRED COMPONENTS CoreAddons I18n Crash)
+find_package(KF6 REQUIRED COMPONENTS CoreAddons I18n Crash WidgetsAddons)
 find_package(Gettext REQUIRED)
 
 add_executable(miryu-hardware-manager
@@ -42,6 +42,7 @@ target_link_libraries(miryu-hardware-manager
     KF6::CoreAddons
     KF6::I18n
     KF6::Crash
+    KF6::WidgetsAddons
 )
 
 install(TARGETS miryu-hardware-manager RUNTIME DESTINATION ${KDE_INSTALL_BINDIR})

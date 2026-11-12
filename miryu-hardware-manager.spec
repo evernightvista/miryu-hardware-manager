@@ -1,6 +1,6 @@
 Name:           miryu-hardware-manager
 Version:        45.0.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Hardware information and driver manager for Fedora
 
 License:        GPL-3.0-or-later
@@ -63,6 +63,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/polkit-1/actions/org.miryugaming.hardwaremanager.dmi.policy
 
 %changelog
+* Fri Nov 12 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-4
+- Fix no event sound bug
+
 * Wed Nov 11 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-3
 - Fix BUG
 

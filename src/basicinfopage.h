@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QStringList>
 
+class QEvent;
 class QLabel;
 class QFrame;
 class QToolButton;
@@ -16,8 +17,12 @@ public:
     explicit BasicInfoPage(QWidget *parent = nullptr);
     void refresh();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     void buildUi();
+    void positionGpuMoreButton();
     QFrame *createCard(const QString &title, const QStringList &iconNames, bool smallValue,
                        QLabel **valueLabel, QLabel **detailLabel);
 
@@ -31,6 +36,7 @@ private:
     QLabel *m_storageDetail = nullptr;
     QLabel *m_gpuValue = nullptr;
     QLabel *m_gpuDetail = nullptr;
+    QFrame *m_gpuCard = nullptr;
     QToolButton *m_gpuMoreButton = nullptr;
     QStringList m_gpuNames;
 };
